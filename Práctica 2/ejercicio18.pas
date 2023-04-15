@@ -79,8 +79,11 @@ procedure recorrerArchivoMaestro(var m:archivoMaestro);
 var
     totalHospital,totalMunicipio,totalLocalidad,total:integer;
     info,actual:infoMaestro;
+    txt:text;
 begin
     reset(m);
+    assign(txt,'ArchivoMaestroEjercicio18.txt');
+    rewrite(txt);
     leer(m,info);
     total:=0;
     while (info.codigoLocalidad<>valoralto) do begin
@@ -103,6 +106,9 @@ begin
                 totalMunicipio+=totalHospital;
             end;
             writeln('Cantidad de casos en el municipio ',actual.codigoMunicipio,': ',totalMunicipio);
+            if (totalMunicipio>1500) then begin
+                write(txt,'El municipio ',actual.nombreMunicipio,' de la localidad ',actual.nombreLocalidad,' tiene ',totalMunicipio,' casos.',#13#10);
+            end;
             totalLocalidad+=totalMunicipio;
         end;
         writeln('Cantidad de casos en la localidad: ',actual.codigoLocalidad,': ',totalLocalidad);
@@ -110,6 +116,7 @@ begin
     end;
     writeln('Total de casos en la provincia: ',total);
     close(m);
+    close(txt);
 end;
 
 var

@@ -327,7 +327,7 @@ var
 
 begin
     reset(maestro);
-    assign(txt,'ArchivoMaestroPersonasEjercicio5.txt');
+    assign(txt,'ArchivoMaestroEjercicio5.txt');
     rewrite(txt);
     write(txt,'Informacion de personas: ',#13#10);
     while (not eof(maestro)) do begin
