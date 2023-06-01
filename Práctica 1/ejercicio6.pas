@@ -1,5 +1,4 @@
 program Ejercicio5Practica1;
-
 type
     celular = record
         codigo:integer;
@@ -32,18 +31,16 @@ begin
     end;
 end;
 
-procedure createFile(var name:archivo;var creado:boolean);
+procedure createFile(var name:archivo);
 var
     fisico:string;
     archivoTexto: text;
     c:celular;
-
 begin
     writeln('Ingrese el nombre del archivo a crear: ');
     readln(fisico);
     assign(name,fisico);
     rewrite(name); // se crea el archivo binario
-    creado:=true;
     assign(archivoTexto,'celulares.txt');
     reset(archivoTexto); // archivoTexto contiene los datos de celulares.txt
     while (not eof(archivoTexto)) do begin // recorremos archivoTexto y cargamos los datos en el archivo binario
@@ -65,12 +62,12 @@ end;
 procedure lowStock(var name:archivo);
 var
     c:celular;
-
 begin
     reset(name);
     while(not eof(name)) do begin
         read(name,c);
-        if (c.stockDisponible<c.stockMinimo) then printCelular(c);
+        if (c.stockDisponible<c.stockMinimo) then 
+            printCelular(c);
     end;
     close(name);
 end;
@@ -80,16 +77,15 @@ var
     cadena:string;
     posicion:integer;
     c:celular;
-
 begin
     reset(name);
     writeln('Ingrese la cadena de caracteres a buscar en la descripcion: ');
     readln(cadena);
     while (not eof(name)) do begin
         read(name,c);
-        posicion:=0;
         posicion:=Pos(cadena,c.descripcion);
-        if (posicion>0) then printCelular(c);
+        if (posicion>0) then 
+            printCelular(c);
     end;
     close(name);
 end;
@@ -98,7 +94,6 @@ procedure exportTxt(var name:archivo);
 var
     texto:text;
     c:celular;
-
 begin
     assign(texto,'celulares.txt');
     rewrite(texto);
@@ -118,13 +113,22 @@ procedure leerCelular(var c:celular);
 var
     marca,descripcion:string;
 begin
-    writeln('Ingrese codigo del celular: ');readln(c.codigo);
-    writeln('Ingrese precio del celular: ');readln(c.precio);
-    writeln('Ingrese marca del celular: ');readln(marca);c.marca:=' ' + marca;
-    writeln('Ingrese stock disponible del celular: ');readln(c.stockDisponible);
-    writeln('Ingrese stock minimo del celular: ');readln(c.stockMinimo);
-    writeln('Ingrese descripcion del celular: ');readln(descripcion);c.descripcion:=' '+descripcion;
-    writeln('Ingrese nombre del celular: ');readln(c.nombre);
+    writeln('Ingrese codigo del celular: ');
+    readln(c.codigo);
+    writeln('Ingrese precio del celular: ');
+    readln(c.precio);
+    writeln('Ingrese marca del celular: ');
+    readln(marca);
+    c.marca:=' ' + marca;
+    writeln('Ingrese stock disponible del celular: ');
+    readln(c.stockDisponible);
+    writeln('Ingrese stock minimo del celular: ');
+    readln(c.stockMinimo);
+    writeln('Ingrese descripcion del celular: ');
+    readln(descripcion);
+    c.descripcion:=' '+ descripcion;
+    writeln('Ingrese nombre del celular: ');
+    readln(c.nombre);
 end;
 
 procedure agregarCelular(var name:archivo);
@@ -144,7 +148,6 @@ var
     nuevoStock:integer;
     modificado:boolean;
     c:celular;
-
 begin
     reset(name);
     writeln('Ingrese el nombre del celular para modificar su stock disponible:');
@@ -161,7 +164,8 @@ begin
             modificado:=true;
         end;
     end;
-    if (not modificado) then writeln('No se encontro un celular con ese nombre.');
+    if (not modificado) then 
+        writeln('No se encontro un celular con ese nombre.');
     close(name);
 end;
 
@@ -169,7 +173,6 @@ procedure exportSinStock(var name:archivo);
 var
     texto:text;
     c:celular;
-
 begin
     reset(name);
     assign(texto,'SinStock.txt');
@@ -189,15 +192,12 @@ end;
 
 var
     opcion:integer;
-    creado:boolean;
     logico:archivo;
-
 begin
-    creado:=false;
-    opciones(opcion,creado);
+    opciones(opcion,false);
     while (opcion<8) do begin
         case opcion of
-            1: createFile(logico,creado);
+            1: createFile(logico);
             2: lowStock(logico);
             3: cadenaDescripcion(logico);
             4: exportTxt(logico);
@@ -205,6 +205,6 @@ begin
             6: modificarStock(logico);
             7: exportSinStock(logico);
         end;
-        opciones(opcion,creado);
+        opciones(opcion,true);
     end;
 end.

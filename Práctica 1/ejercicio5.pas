@@ -1,5 +1,4 @@
 program Ejercicio5Practica1;
-
 type
     celular = record
         codigo:integer;
@@ -24,7 +23,7 @@ begin
     end
     else begin
         writeln('Ingrese una opcion:',#13#10,
-        '1:Crear un archivo de registros no ordenados de celulares y cargarlo con datos ingresados desde un archivo de texto denominado celulares.txt');
+        '1: Crear un archivo de registros no ordenados de celulares y cargarlo con datos ingresados desde un archivo de texto denominado celulares.txt');
         readln(opcion);
     end;
 end;
@@ -34,7 +33,6 @@ var
     fisico:string;
     archivoTexto: text;
     c:celular;
-
 begin
     writeln('Ingrese el nombre del archivo a crear: ');
     readln(fisico);
@@ -61,12 +59,12 @@ end;
 procedure lowStock(var name:archivo);
 var
     c:celular;
-
 begin
     reset(name);
     while(not eof(name)) do begin
         read(name,c);
-        if (c.stockDisponible<c.stockMinimo) then printCelular(c);
+        if (c.stockDisponible<c.stockMinimo) then 
+            printCelular(c);
     end;
     close(name);
 end;
@@ -76,16 +74,15 @@ var
     cadena:string;
     posicion:integer;
     c:celular;
-
 begin
     reset(name);
     writeln('Ingrese la cadena de caracteres a buscar en la descripcion: ');
     readln(cadena);
     while (not eof(name)) do begin
         read(name,c);
-        posicion:=0;
         posicion:=Pos(cadena,c.descripcion);
-        if (posicion>0) then printCelular(c);
+        if (posicion>0) then 
+            printCelular(c);
     end;
     close(name);
 end;
@@ -94,7 +91,6 @@ procedure exportTxt(var name:archivo);
 var
     texto:text;
     c:celular;
-
 begin
     assign(texto,'celulares.txt');
     rewrite(texto);
@@ -113,7 +109,6 @@ end;
 var
     opcion:integer;
     logico:archivo;
-
 begin
     opciones(opcion,false);
     while (opcion<5) do begin

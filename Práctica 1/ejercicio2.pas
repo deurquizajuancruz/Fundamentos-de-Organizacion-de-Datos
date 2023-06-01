@@ -11,6 +11,7 @@ begin
     reset(name);
     while (not eof(name)) do begin
         read(name, num);
+        writeln(num);
         if (num<1500) then menores+=1;
         suma+=num;
         cantidad+=1;
@@ -21,9 +22,11 @@ begin
 end;
 
 var
-    logico: archivo;
-
+    logico:archivo;
+    nombre:string;
 begin
-    assign(logico,'ArchivoEjercicio1');
+    writeln('Ingrese el nombre del archivo a procesar: ');
+    readln(nombre);
+    assign(logico,nombre);
     recorrer(logico);
 end.

@@ -6,7 +6,6 @@ type
         genero:string;
         precio:real;
     end;
-
     archivo = file of novela;
 
 procedure opciones(var opcion:integer;creado:boolean);
@@ -30,7 +29,6 @@ var
     nombre:string;
     archivoTexto:text;
     n:novela;
-
 begin
     writeln('Ingrese el nombre del archivo a crear: ');
     readln(nombre);
@@ -72,8 +70,6 @@ var
     modificado:boolean;
     n:novela;
     atributoModificar,codigo:integer;
-    nuevoAtributoString: string;
-    nuevoPrecio: real;
 begin
     reset(name);
     modificado:=false;
@@ -91,23 +87,19 @@ begin
             case atributoModificar of
                 1: begin
                     writeln('Selecciona el nuevo codigo para la novela: ');
-                    readln(atributoModificar);
-                    n.codigo:=atributoModificar;
+                    readln(n.codigo);
                 end;
                 2: begin
                     writeln('Selecciona el nuevo nombre para la novela: ');
-                    readln(nuevoAtributoString);
-                    n.nombre:=nuevoAtributoString;
+                    readln(n.nombre);
                 end;
                 3: begin
                     writeln('Selecciona el nuevo genero para la novela: ');
-                    readln(nuevoAtributoString);
-                    n.genero:=nuevoAtributoString;
+                    readln(n.genero);
                 end;
                 4: begin
                     writeln('Selecciona el nuevo precio para la novela: ');
-                    readln(nuevoPrecio);
-                    n.precio:=nuevoPrecio;
+                    readln(n.precio);
                 end;
             end;
             seek(name, filepos(name)-1);
@@ -115,14 +107,14 @@ begin
             modificado:=true;
         end;
     end;
-    if (not modificado) then writeln('No se encontro una novela con ese codigo.');
+    if (not modificado) then 
+        writeln('No se encontro una novela con ese codigo.');
     close(name);
 end;
 
 var
     opcion:integer;
     logico:archivo;
-
 begin
     opciones(opcion,false);
     while (opcion<4) do begin

@@ -1,8 +1,4 @@
 program Ejercicio3Practica1;
-
-{const
-    len = 3;}
-
 type
     empleado = record
         num:integer;
@@ -13,14 +9,13 @@ type
     end;
     archivo = file of empleado;
 
-{procedure randomString(var s: string);
-var 
+{function randomString():string;
+var
     i:integer;
 begin
-    setLength(s,len);
-    for i:=1 to len do begin
-        s[i]:=chr(random(26)+97);
-    end;
+    setLength(randomString,3);
+    for i := 1 to 3 do 
+        randomString[i]:=chr(random(26)+97);        
 end;}
 
 procedure imprimirEmpleado(e:empleado);
@@ -28,7 +23,7 @@ begin
     writeln('Empleado numero ',e.num,' llamado ',e.nombre,' ',e.apellido, ' con ',e.edad,' anios y DNI ',e.dni);
 end;
 
-procedure cargarEmpleados(var f: archivo;var creado:boolean);
+procedure cargarEmpleados(var f: archivo);
 var
     e:empleado;
     fisico:string;
@@ -37,15 +32,20 @@ begin
     readln(fisico);
     assign(f,fisico);
     rewrite(f);
-    creado:=true;
-    writeln('Ingrese apellido del empleado:');readln(e.apellido);//randomString(e.apellido);
+    writeln('Ingrese apellido del empleado:');
+    readln(e.apellido);//e.apellido:=randomString();
     while (e.apellido<>'fin') do begin
-        writeln('Ingrese numero de empleado:');readln(e.num);//e.num:=random(50)+1;
-        writeln('Ingrese nombre del empleado:');readln(e.nombre);//randomString(e.nombre);
-        writeln('Ingrese edad del empleado:');readln(e.edad);//e.edad:=random(60)+20;
-        writeln('Ingrese DNI del empleado:');readln(e.dni);//randomString(e.dni);
+        writeln('Ingrese numero de empleado:');
+        readln(e.num);//e.num:=random(50)+1;
+        writeln('Ingrese nombre del empleado:');
+        readln(e.nombre);//e.nombre:=randomString();
+        writeln('Ingrese edad del empleado:');
+        readln(e.edad);//e.edad:=random(60)+20;
+        writeln('Ingrese DNI del empleado:');
+        readln(e.dni);//e.dni:=randomString();
         write(f,e);
-        writeln('Ingrese apellido del empleado:');readln(e.apellido);//randomString(e.apellido);
+        writeln('Ingrese apellido del empleado:');
+        readln(e.apellido);//e.apellido:=randomString();
     end;
     close(f);
 end;
@@ -56,10 +56,12 @@ var
     e:empleado;
 begin
     reset(name);
-    writeln('Ingrese el nombre o apellido a buscar: ');readln(busqueda);
+    writeln('Ingrese el nombre o apellido a buscar: ');
+    readln(busqueda);
     while (not eof(name)) do begin
         read(name,e);
-        if ((e.nombre=busqueda) or (e.apellido=busqueda)) then imprimirEmpleado(e);
+        if ((e.nombre=busqueda) or (e.apellido=busqueda)) then 
+            imprimirEmpleado(e);
     end;
     close(name);
 end;
@@ -100,7 +102,8 @@ begin
     reset(name);
     while (not eof(name)) do begin
         read(name,e);
-        if (e.edad>70) then imprimirEmpleado(e);
+        if (e.edad>70) then 
+            imprimirEmpleado(e);
     end;
     close(name);
 end;
@@ -108,19 +111,16 @@ end;
 var
     opcion:integer;
     logico: archivo;
-    creado:boolean;
-
 begin
     //Randomize;
-    creado:=false;
-    opciones(opcion,creado);
+    opciones(opcion,false);
     while (opcion<5) do begin
         case opcion of
-            1: cargarEmpleados(logico,creado);
+            1: cargarEmpleados(logico);
             2: determined(logico);
             3: allEmployees(logico);
             4: olderThanSeventy(logico);
         end;
-        opciones(opcion,creado);
+        opciones(opcion,true);
     end;
 end.
