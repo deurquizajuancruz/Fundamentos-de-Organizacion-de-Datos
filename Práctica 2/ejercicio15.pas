@@ -13,7 +13,6 @@ type
         sinAgua:integer;
         sinSanitarios:integer;
     end;
-
     infoDetalle = record
         provincia:integer;
         localidad:integer;
@@ -23,13 +22,12 @@ type
         conGas:integer;
         sanitarios:integer;
     end;
-
     archivoMaestro = file of infoMaestro;
     archivoDetalle = file of infoDetalle;
     arrayDetalles = array [1..10] of archivoDetalle;
     arrayRegistrosDetalles = array[1..10] of infoDetalle;
-{
-//ARCHIVO MAESTRO: SE DISPONE
+
+{ARCHIVO MAESTRO: SE DISPONE
 
 function randomString():string;
 var
@@ -37,7 +35,8 @@ var
 
 begin
     setLength(randomString,6);
-    for i := 1 to 5 do randomString[i]:=chr(random(26)+97);
+    for i := 1 to 5 do 
+        randomString[i]:=chr(random(26)+97);
 end;
 
 procedure cargarInfoMaestro(var info:infoMaestro;anterior:integer);
@@ -61,7 +60,6 @@ end;
 procedure cargarArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     rewrite(m);
     cargarInfoMaestro(info,0);
@@ -71,7 +69,6 @@ begin
     end;
     close(m);
 end;
-
 
 procedure cargarInfoDetalle(var info:infoDetalle);
 begin
@@ -89,7 +86,6 @@ end;
 procedure cargarArchivoDetalle(var name:archivoDetalle);
 var
     info:infoDetalle;
-
 begin
     rewrite(name);
     cargarInfoDetalle(info);
@@ -98,13 +94,14 @@ begin
         cargarInfoDetalle(info);
     end;
     close(name);
-end;
-}
+end;}
 
 procedure leer(var d:archivoDetalle; var infoD:infoDetalle);
 begin
-    if (not eof(d)) then read(d,infoD)
-    else infoD.provincia:=valoralto;
+    if (not eof(d)) then 
+        read(d,infoD)
+    else 
+        infoD.provincia:=valoralto;
 end;
 
 procedure buscarMinimo(var min:infoDetalle; var vectorRegistros:arrayRegistrosDetalles; var vectorDetalles:arrayDetalles);
@@ -121,13 +118,13 @@ begin
             end;            
         end;
     end;
-    if (min.provincia<>valoralto) then leer(vectorDetalles[minPos],vectorRegistros[minPos]);
+    if (min.provincia<>valoralto) then 
+        leer(vectorDetalles[minPos],vectorRegistros[minPos]);
 end;
 
 procedure inicializarArchivosDetalles(var vectorDetalles:arrayDetalles;var vectorRegistros:arrayRegistrosDetalles);
 var
     i:integer;
-
 begin
     for i := 1 to 10 do begin
         reset(vectorDetalles[i]);
@@ -139,9 +136,8 @@ procedure cerrarArchivosDetalles(var vectorDetalles:arrayDetalles);
 var
     i:integer;
 begin
-    for i := 1 to 10 do begin
+    for i := 1 to 10 do
         close(vectorDetalles[i]);
-    end;
 end;
 
 procedure actualizarMaestro(var m:archivoMaestro; var vector:arrayDetalles);
@@ -155,38 +151,46 @@ begin
     buscarMinimo(min,vectorRegistros,vector);
     read(m,infoM);
     while (min.provincia<>valoralto) do begin
-        while (min.provincia>infoM.provincia) do begin
+        while (min.provincia>infoM.provincia) do
             read(m,infoM);
-        end;
         while (min.provincia=infoM.provincia) do begin
-            while (min.localidad>infoM.localidad) do begin
+            while (min.localidad>infoM.localidad) do
                 read(m,infoM);
-            end;
             while (min.provincia=infoM.provincia) and (min.localidad=infoM.localidad) do begin
                 // para q no queden numeros negativos
-                if (min.conLuz>infoM.sinLuz) then infoM.sinLuz:=0
-                else infoM.sinLuz-=min.conLuz;
-                if (min.conGas>infoM.sinGas) then infoM.sinGas:=0
-                else infoM.sinGas-=min.conGas;
-                if (min.construidas>infoM.chapa) then infoM.chapa:=0
-                else infoM.chapa-=min.construidas;
-                if (min.conAgua>infoM.sinAgua) then infoM.sinAgua:=0
-                else infoM.sinAgua-=min.conAgua;
-                if (min.sanitarios>infoM.sinSanitarios) then infoM.sinSanitarios:=0
-                else infoM.sinSanitarios-=min.sanitarios;
+                if (min.conLuz>infoM.sinLuz) then 
+                    infoM.sinLuz:=0
+                else 
+                    infoM.sinLuz-=min.conLuz;
+                if (min.conGas>infoM.sinGas) then 
+                    infoM.sinGas:=0
+                else 
+                    infoM.sinGas-=min.conGas;
+                if (min.construidas>infoM.chapa) then 
+                    infoM.chapa:=0
+                else 
+                    infoM.chapa-=min.construidas;
+                if (min.conAgua>infoM.sinAgua) then 
+                    infoM.sinAgua:=0
+                else 
+                    infoM.sinAgua-=min.conAgua;
+                if (min.sanitarios>infoM.sinSanitarios) then 
+                    infoM.sinSanitarios:=0
+                else 
+                    infoM.sinSanitarios-=min.sanitarios;
                 buscarMinimo(min,vectorRegistros,vector);                
             end;
             seek(m,filepos(m)-1);
             write(m,infoM);
         end;
     end;
-    close(m);cerrarArchivosDetalles(vector);
+    close(m);
+    cerrarArchivosDetalles(vector);
 end;
 
 procedure imprimirArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     reset(m);
     while (not eof(m)) do begin
@@ -206,7 +210,6 @@ end;
 procedure imprimirArchivoDetalle(var d:archivoDetalle);
 var
     info:infoDetalle;
-
 begin
     reset(d);
     while (not eof(d)) do begin
@@ -230,7 +233,7 @@ var
 begin
     randomize;
     assign(maestro,'ArchivoMaestroEjercicio15');
-    //cargarArchivoMaestro(maestro);
+    cargarArchivoMaestro(maestro);
     writeln('Archivo maestro: ');
     imprimirArchivoMaestro(maestro);
     for i := 1 to 10 do begin

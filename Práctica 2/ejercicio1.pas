@@ -9,10 +9,53 @@ type
     end;
     archivoComisiones = file of empleado;
 
+{CREANDO EL ARCHIVO QUE HAY QUE RECORRER
+
+procedure cargarEmpleado(var e:empleado;aux:integer);
+begin
+    writeln('Ingrese codigo del empleado: ');
+    readln(e.codigo);
+    if ((e.codigo<>aux) and (e.codigo<>0)) then begin
+        writeln('Ingrese nombre del empleado: ');
+        readln(e.nombre);
+    end;
+    e.monto:=Random()*100;
+end;
+
+procedure crearArchivoComisiones(var viejo:archivoComisiones;name:string);
+var
+    e:empleado;
+    aux:integer;
+begin
+    rewrite(viejo);
+    aux:=-1;
+    cargarEmpleado(e,aux);
+    while (e.codigo<>0) do begin
+        write(viejo,e);
+        aux:=e.codigo;
+        cargarEmpleado(e,aux);
+    end;
+    close(viejo);
+end;
+
+procedure imprimirArchivo(var viejo:archivoComisiones);
+var
+    e:empleado;
+begin
+    reset(viejo);
+    while (not eof(viejo)) do begin
+        read(viejo,e);
+        writeln('Codigo del empleado: ',e.codigo,'. Nombre: ',e.nombre,'. Monto: ',e.monto:0:2);
+    end;
+    close(viejo);
+end;}
+
 procedure leer(var viejo:archivoComisiones;var e:empleado);
 begin
-    if (not eof(viejo)) then read(viejo,e)
-    else e.codigo:=valoralto;
+    if (not eof(viejo)) then 
+        read(viejo,e)
+    else 
+        e.codigo:=valoralto;
 end;
 
 procedure recorrerArchivo(var nuevo,viejo:archivoComisiones);
@@ -29,61 +72,18 @@ begin
             leer(viejo,e);
         end;
         write(nuevo,aux);
-        writeln('Empleado con codigo: ',aux.codigo,'. Nombre: ',aux.nombre,'. Valor total de sus comisiones: ',aux.monto:0:2);
     end;
     close(nuevo);
     close(viejo);
 end;
 
-//CREANDO EL ARCHIVO QUE HAY QUE RECORRER
-{procedure cargarEmpleado(var e:empleado;aux:integer);
-begin
-    writeln('Ingrese codigo del empleado: ');readln(e.codigo);
-    if ((e.codigo<>aux) and (e.codigo<>0)) then begin
-        writeln('Ingrese nombre del empleado: ');readln(e.nombre);
-    end;
-    e.monto:=Random()*100;
-end;
-
-procedure crearArchivoComisiones(var viejo:archivoComisiones;name:string);
-var
-    e:empleado;
-    aux:integer;
-
-begin
-    assign(viejo,name);
-    rewrite(viejo);
-    aux:=-1;
-    cargarEmpleado(e,aux);
-    while (e.codigo<>0) do begin
-        write(viejo,e);
-        aux:=e.codigo;
-        cargarEmpleado(e,aux);
-    end;
-    close(viejo);
-end;
-
-procedure imprimirArchivo(var viejo:archivoComisiones);
-var
-    e:empleado;
-
-begin
-    reset(viejo);
-    while (not eof(viejo)) do begin
-        read(viejo,e);
-        writeln('Codigo del empleado: ',e.codigo,'. Nombre: ',e.nombre,'. Monto: ',e.monto:0:2);
-    end;
-    close(viejo);
-end;}
-
 var
     archivoRecorrer,archivoNuevo: archivoComisiones;
-
 begin
-    Randomize;
-    {crearArchivoComisiones(archivoRecorrer,'ArchivoMaestroEjercicio1');
+    {randomize;
+    assign(archivoRecorrer,'ArchivoMaestroEjercicio1');
+    crearArchivoComisiones(archivoRecorrer,'ArchivoMaestroEjercicio1');
     imprimirArchivo(archivoRecorrer);}
-    assign(archivoRecorrer,name);
     assign(archivoNuevo,'ArchivoMaestroEjercicio1Compactado');
     rewrite(archivoNuevo);
     recorrerArchivo(archivoNuevo,archivoRecorrer);

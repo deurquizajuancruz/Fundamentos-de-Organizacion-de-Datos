@@ -7,7 +7,6 @@ type
         nombre:string;
         apellido:string;
     end;
-
     infoMaestro = record
         cli:cliente;
         anio:integer;
@@ -15,26 +14,27 @@ type
         dia:integer;
         monto:real;
     end;
-
     archivoMaestro= file of infoMaestro;
 
-{ 
-ARCHIVO MAESTRO: SE DISPONE
+{ ARCHIVO MAESTRO: SE DISPONE
 function randomString():string;
 var
     i:integer;
-
 begin
-    setLength(randomString,6);
-    for i := 1 to 6 do randomString[i]:=chr(random(26)+97);
+    setLength(randomString,3);
+    for i := 1 to 3 do 
+        randomString[i]:=chr(random(26)+97);        
 end;
 
 procedure leerInfoMaestro(var info:infoMaestro);
 begin
-    writeln('Ingrese codigo de cliente: ');readln(info.cli.codigo);
+    writeln('Ingrese codigo de cliente: ');
+    readln(info.cli.codigo);
     if (info.cli.codigo<>0) then begin
-        writeln('Ingrese anio: ');readln(info.anio);
-        writeln('Ingrese mes: ');readln(info.mes);
+        writeln('Ingrese anio: ');
+        readln(info.anio);
+        writeln('Ingrese mes: ');
+        readln(info.mes);
         info.cli.nombre:=randomString();
         info.cli.apellido:=randomString();
         info.dia:=random(31)+1;
@@ -45,7 +45,6 @@ end;
 procedure cargarArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     rewrite(m);
     leerInfoMaestro(info);
@@ -54,13 +53,11 @@ begin
         leerInfoMaestro(info);        
     end;
     close(m);
-end;
-}
+end;}
 
 procedure imprimirArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     reset(m);
     while (not eof(m)) do begin
@@ -77,15 +74,16 @@ end;
 
 procedure leer(var m:archivoMaestro;var info:infoMaestro);
 begin
-    if (not eof(m)) then read(m,info)
-    else info.cli.codigo:=valoralto;
+    if (not eof(m)) then 
+        read(m,info)
+    else 
+        info.cli.codigo:=valoralto;
 end;
 
 procedure recorrerArchivo(var m:archivoMaestro);
 var
     info,actual:infoMaestro;
     totalEmpresa,totalAnio,totalMes:real;
-
 begin
     reset(m);
     leer(m,info);
@@ -100,13 +98,13 @@ begin
                 totalMes:=0;
                 while (info.cli.codigo=actual.cli.codigo) and (info.anio=actual.anio) and (info.mes=actual.mes) do begin
                     totalMes+=info.monto;
-                    totalAnio+=info.monto;
-                    totalEmpresa+=info.monto;
                     leer(m,info);
                 end;
                 writeln('Recaudado en el mes ',actual.mes,' anio ',actual.anio,' por el cliente ',actual.cli.codigo,' llamado ',actual.cli.nombre,' ',actual.cli.apellido,' fue de: ',totalMes:0:2);
+                totalAnio+=totalMes;
             end;
             writeln('Recaudado en el anio ',actual.anio,' por el cliente ',actual.cli.codigo,' llamado ',actual.cli.nombre,' ',actual.cli.apellido,' fue de: ',totalAnio:0:2);
+            totalEmpresa+=totalAnio;
         end;
     end;
     writeln('Recaudado total en la empresa: ',totalEmpresa:0:2);
@@ -115,11 +113,10 @@ end;
 
 var
     maestro:archivoMaestro;
-
 begin
     randomize;
     assign(maestro,'ArchivoMaestroEjercicio8');
-    //cargarArchivoMaestro(maestro);
+    cargarArchivoMaestro(maestro);
     imprimirArchivoMaestro(maestro);
     recorrerArchivo(maestro);
 end.

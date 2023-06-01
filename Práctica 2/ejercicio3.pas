@@ -10,33 +10,31 @@ type
         stockMinimo:integer;
         precio:real;
     end;
-
     infoDetalle = record
         codigo:integer;
         cantidad:integer;
     end;
-
     archivoDetalle = file of infoDetalle;
     archivoMaestro = file of producto;
     arrayDetalles = array [1..30] of archivoDetalle;
 
-//ARCHIVO MAESTRO CON LOS DATOS DE LOS PRODUCTOS: SE DISPONE
-{procedure randomString(var s: string);
-var 
+{ARCHIVO MAESTRO CON LOS DATOS DE LOS PRODUCTOS: SE DISPONE
+
+function randomString():string;
+var
     i:integer;
 begin
-    setLength(s,3);
-    for i:=1 to 3 do begin
-        s[i]:=chr(random(26)+97);
-    end;
+    setLength(randomString,3);
+    for i := 1 to 3 do 
+        randomString[i]:=chr(random(26)+97);        
 end;
 
 procedure cargarProducto(var p:producto);
 begin
     writeln('Ingrese codigo de producto: ');readln(p.codigo);
     if (p.codigo<>0) then begin
-        randomString(p.nombre);
-        randomString(p.descripcion);
+        p.nombre:=randomString();
+        p.descripcion:=randomString();
         p.stockDisponible:=random(400)+1;
         p.stockMinimo:=random(400)+1;
         p.precio:=random()*100;
@@ -54,6 +52,30 @@ begin
         cargarProducto(p);
     end;
     close(maestro);
+end;
+
+ARCHIVOS DETALLES CON INFO DE LOS PRODUCTOS: SE DISPONE
+
+procedure cargarProductoDetalle(var p:infoDetalle);
+begin
+    writeln('Ingrese codigo del producto: ');
+        readln(p.codigo);
+    if (p.codigo<>0) then 
+        p.cantidad:=random(50)+1;
+end;
+
+procedure cargarArchivoDetalle(var name:archivoDetalle);
+var
+    i:infoDetalle;
+    nombre,numString:string;
+begin
+    rewrite(name);
+    cargarProductoDetalle(i);
+    while(i.codigo<>0) do begin
+        write(name,i);
+        cargarProductoDetalle(i);
+    end;
+    close(name);
 end;}
 
 procedure imprimirArchivo(var name:archivoMaestro);
@@ -69,37 +91,9 @@ begin
     close(name);
 end;
 
-//ARCHIVOS DETALLES CON INFO DE LOS PRODUCTOS: SE DISPONE
-
-{procedure cargarProductoDetalle(var p:infoDetalle);
-begin
-    writeln('Ingrese codigo del producto: ');readln(p.codigo);
-    if (p.codigo<>0) then p.cantidad:=random(50)+1;
-end;
-
-procedure cargarArchivoDetalle(var name:archivoDetalle;num:integer);
-var
-    i:infoDetalle;
-    nombre,numString:string;
-
-begin
-    nombre:='ArchivoDetalleEjercicio3Numero';
-    str(num,numString);
-    nombre+=numString;
-    assign(name,nombre);
-    rewrite(name);
-    cargarProductoDetalle(i);
-    while(i.codigo<>0) do begin
-        write(name,i);
-        cargarProductoDetalle(i);
-    end;
-    close(name);
-end;}
-
 procedure imprimirDetalle(var name:archivoDetalle);
 var
     i:infoDetalle;
-
 begin
     reset(name);
     while (not eof(name)) do begin
@@ -111,17 +105,19 @@ end;
 
 procedure leer(var name:archivoDetalle;var i:infoDetalle);
 begin
-    if (not eof(name)) then read(name,i)
-    else i.codigo:=valoralto;
+    if (not eof(name)) then 
+        read(name,i)
+    else 
+        i.codigo:=valoralto;
 end;
 
 procedure actualizarMaestro(var m:archivoMaestro; var d:archivoDetalle);
 var
     i:infoDetalle;
     p:producto;
-
 begin
-    reset(m);reset(d);
+    reset(m);
+    reset(d);
     leer(d,i);
     while (i.codigo<>valoralto) do begin // mientras no se termine el archivo detalle, leo en el maestro
         read(m,p);
@@ -129,22 +125,23 @@ begin
             read(m,p);
         end;
         while (i.codigo=p.codigo) do begin // mientras los codigos sean iguales, actualizo en el registro a cargar en el maestro
-            if (i.cantidad>p.stockDisponible) then begin
-                p.stockDisponible-=p.stockDisponible; // para que el stock no quede negativo
-            end else p.stockDisponible-=i.cantidad;
+            if (i.cantidad>p.stockDisponible) then
+                p.stockDisponible:=0 // para que el stock no quede negativo
+            else 
+                p.stockDisponible-=i.cantidad;
             leer(d,i);
         end;
         seek(m,filepos(m)-1); //me posiciono en la posicion anterior a la que estoy parado del maestro para poder actualizar esa informacion
         write(m,p); //cargo el producto actualizado en el maestro
     end;
-    close(m);close(d);
+    close(m);
+    close(d);
 end;
 
 procedure exportarTxt(var m:archivoMaestro);
 var
     txt:text;
     p:producto;
-
 begin
     reset(m);
     assign(txt,'stockDisponibleMenorEjercicio3.txt');
@@ -152,11 +149,11 @@ begin
     write(txt,'Productos que tienen un stock disponible menor que el stock minimo: ',#13#10);
     while (not eof(m)) do begin
         read(m,p);
-        if (p.stockDisponible<p.stockMinimo) then begin
+        if (p.stockDisponible<p.stockMinimo) then
             write(txt,'Nombre: ',p.nombre,'. Descripcion: ',p.descripcion,'. Stock disponible: ',p.stockDisponible,'. Precio: ',p.precio:0:2,#13#10);
-        end;
     end;
-    close(txt);close(m);
+    close(txt);
+    close(m);
 end;
 
 var
@@ -164,26 +161,22 @@ var
     i:integer;
     vector:arrayDetalles;
     nombre,numString:string;
-
 begin
-    randomize;
+    //randomize;
     assign(maestro, 'ArchivoMaestroEjercicio3');
-    //cargarArchivoMaestro(maestro);
+    cargarArchivoMaestro(maestro);
     imprimirArchivo(maestro);
     for i := 1 to 30 do begin
-        //writeln('Cargar archivo detalle numero ',i);
-        //cargarArchivoDetalle(vector[i],i);
         nombre:='ArchivoDetalleEjercicio2Numero';
         str(i,numString);
         nombre+=numString;
         assign(vector[i],nombre);
-        writeln('--------------------');
-        writeln('Detalle numero ',i);
-        writeln('--------------------');
+        {writeln('Cargar archivo detalle numero ',i);
+        cargarArchivoDetalle(vector[i]);}
+        writeln('Detalle numero: ',i);
         imprimirDetalle(vector[i]);
         actualizarMaestro(maestro,vector[i]);
     end;
-    writeln('--------------------');
     writeln('Archivo maestro, actualizado:');
     imprimirArchivo(maestro);
     exportarTxt(maestro);

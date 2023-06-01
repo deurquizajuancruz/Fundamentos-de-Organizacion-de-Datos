@@ -9,7 +9,6 @@ type
         categoria:integer;
         horas:integer;
     end;
-
     archivoMaestro = file of infoMaestro;
     archivoCategorias = array[1..15] of real;
 
@@ -43,7 +42,6 @@ end;
 procedure imprimirArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     reset(m);
     while (not eof(m)) do begin
@@ -62,7 +60,6 @@ var
     txt:text;
     categoria:integer;
     valorCategoria:real;
-
 begin
     assign(txt,'categoriasValoresEjercicio10.txt');
     reset(txt);
@@ -75,8 +72,10 @@ end;
 
 procedure leer(var m:archivoMaestro;var info:infoMaestro);
 begin
-    if (not eof(m)) then read(m,info)
-    else info.departamento:=valoralto;
+    if (not eof(m)) then 
+        read(m,info)
+    else 
+        info.departamento:=valoralto;
 end;
 
 procedure recorrerArchivo(var m:archivoMaestro;vectorHoras:archivoCategorias);
@@ -84,7 +83,6 @@ var
     info,actual:infoMaestro;
     montoTotalDepartamento,montoTotalDivision,montoTotalEmpleado:real;
     totalHorasDepartamento,totalHorasDivision,totalHorasEmpleado:integer;
-
 begin
     reset(m);
     leer(m,info);   
@@ -104,18 +102,18 @@ begin
                 totalHorasEmpleado:=0;
                 while (info.departamento=actual.departamento) and (info.division=actual.division) and (info.numero=actual.numero) do begin
                     totalHorasEmpleado+=actual.horas;
-                    totalHorasDepartamento+=actual.horas;
-                    totalHorasDivision+=actual.horas;
                     leer(m,info);
                 end;
                 montoTotalEmpleado:=vectorHoras[actual.categoria] * totalHorasEmpleado;
                 writeln('Numero de empleado      Total de hs.    Importe a cobrar');
                 writeln(actual.numero,'                         ',totalHorasEmpleado,'                ',montoTotalEmpleado:0:2);
                 montoTotalDivision+=montoTotalEmpleado;
+                totalHorasDepartamento+=totalHorasEmpleado;
             end;
             writeln('Total de horas por division: ',totalHorasDivision);
             writeln('Monto total por division: ',montoTotalDivision:0:2);
             montoTotalDepartamento+=montoTotalDivision;
+            totalHorasDivision+=totalHorasDepartamento;
         end;
         writeln('Total horas departamento: ',totalHorasDepartamento);
         writeln('Monto total departamento: ',montoTotalDepartamento:0:2);
@@ -125,11 +123,10 @@ end;
 
 var
     maestro:archivoMaestro;
-    vectorHoras: archivoCategorias;
+    vectorHoras:archivoCategorias;
     i:integer;
-
 begin
-    randomize;
+    //randomize;
     assign(maestro,'ArchivoMaestroEjercicio10');
     //cargarArchivoMaestro(maestro);
     writeln('Archivo maestro: ');

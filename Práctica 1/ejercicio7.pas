@@ -48,10 +48,14 @@ end;
 
 procedure leerNovela(var n:novela);
 begin
-    writeln('Ingrese codigo de la novela: ');readln(n.codigo);
-    writeln('Ingrese precio de la novela: ');readln(n.precio);
-    writeln('Ingrese genero de la novela: ');readln(n.genero);
-    writeln('Ingrese nombre de la novela: ');readln(n.nombre);
+    writeln('Ingrese codigo de la novela: ');
+    readln(n.codigo);
+    writeln('Ingrese precio de la novela: ');
+    readln(n.precio);
+    writeln('Ingrese genero de la novela: ');
+    readln(n.genero);
+    writeln('Ingrese nombre de la novela: ');
+    readln(n.nombre);
 end;
 
 procedure agregarNovela(var name:archivo);

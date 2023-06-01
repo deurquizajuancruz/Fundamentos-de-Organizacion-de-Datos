@@ -10,27 +10,25 @@ type
         marca:string;
         stockActual:integer;
     end;
-
     infoDetalle = record
         codigo:integer;
         precio:real;
         fecha:string;
     end;
-
     archivoMaestro = file of infoMaestro;
     archivoDetalle = file of infoDetalle;
     arrayDetalles = array[1..10] of archivoDetalle;
     arrayRegistrosDetalles = array[1..10] of infoDetalle;
 
-{
-//ARCHIVO MAESTRO: SE DISPONE
+{ARCHIVO MAESTRO: SE DISPONE
 
 function randomString():string;
 var
     i:integer;
 begin
     setLength(randomString,5);
-    for i := 1 to 5 do randomString[i]:=chr(random(26)+97);
+    for i := 1 to 5 do 
+        randomString[i]:=chr(random(26)+97);
 end;
 
 procedure cargarInfoMaestro(var info:infoMaestro);
@@ -78,8 +76,7 @@ begin
         cargarInfoDetalle(info);
     end;
     close(name);
-end;
-}
+end;}
 
 procedure imprimirArchivoMaestro(var m:archivoMaestro);
 var
@@ -107,8 +104,10 @@ end;
 
 procedure leer(var d:archivoDetalle;var info:infoDetalle);
 begin
-    if (not eof(d)) then read(d,info)
-    else info.codigo:=valoralto;
+    if (not eof(d)) then 
+        read(d,info)
+    else 
+        info.codigo:=valoralto;
 end;
 
 procedure inicializarArchivosDetalles(var vectorDetalles:arrayDetalles; var vectorRegistros:arrayRegistrosDetalles);
@@ -125,9 +124,8 @@ procedure cerrarArchivosDetalles(var vectorDetalles:arrayDetalles);
 var
     i:integer;
 begin
-    for i := 1 to 5 do begin
+    for i := 1 to 5 do
         close(vectorDetalles[i]);
-    end;
 end;
 
 procedure buscarMinimo(var min:infoDetalle; var vectorDetalles: arrayDetalles; var vectorRegistros: arrayRegistrosDetalles);
@@ -143,7 +141,8 @@ begin
             end;
         end;
     end;
-    if (min.codigo<>valoralto) then leer(vectorDetalles[minPos],vectorRegistros[minPos]);
+    if (min.codigo<>valoralto) then 
+        leer(vectorDetalles[minPos],vectorRegistros[minPos]);
 end;
 
 procedure actualizarMaestro(var m:archivoMaestro; var vectorDetalles:arrayDetalles);
@@ -159,9 +158,8 @@ begin
     read(m,infoM);
     maximo:=-1;
     while (min.codigo<>valoralto) do begin
-        while (min.codigo>infoM.codigo) do begin
+        while (min.codigo>infoM.codigo) do
             read(m,infoM);
-        end;
         ventas:=0;
         while (min.codigo=infoM.codigo) do begin
             ventas+=1;
@@ -186,7 +184,7 @@ var
     i:integer;
     nombre,numString:string;
 begin
-    randomize;
+    //randomize;
     assign(maestro,'ArchivoMaestroEjercicio17');
     //cargarArchivoMaestro(maestro);
     imprimirArchivoMaestro(maestro);

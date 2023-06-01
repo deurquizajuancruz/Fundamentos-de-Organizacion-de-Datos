@@ -9,12 +9,10 @@ type
         sinFinal:integer;
         conFinal:integer;
     end;
-
     infoDetalle = record
         codigo:integer;
         nota:integer;
     end;
-
     detalle = file of infoDetalle;
     maestro = file of alumno;
 
@@ -107,26 +105,29 @@ end;}
 
 procedure leer(var name:detalle;var i:infoDetalle);
 begin
-    if (not eof(name)) then read(name,i)
-    else i.codigo:=valoralto;
+    if (not eof(name)) then 
+        read(name,i)
+    else 
+        i.codigo:=valoralto;
 end;
 
 procedure actualizarMaestro(var m:maestro; var d:detalle);
 var
     i:infoDetalle;
     a:alumno;
-
 begin
-    reset(m);reset(d);
+    reset(m);
+    reset(d);
     leer(d,i);
     while (i.codigo<>valoralto) do begin
         read(m,a);
-        while(i.codigo<>a.codigo) do begin
+        while(i.codigo<>a.codigo) do
             read(m,a);
-        end;
         while (i.codigo=a.codigo) do begin
-            if (i.nota>=6) then a.conFinal+=1
-            else if ((i.nota>=4) and (i.nota<6)) then a.sinFinal+=1;
+            if (i.nota>=6) then 
+                a.conFinal+=1
+            else if (i.nota>=4) then 
+                a.sinFinal+=1;
             leer(d,i);
         end;
         seek(m,filepos(m)-1);
@@ -142,7 +143,6 @@ var
     txt:text;
     nombre:string;
     a:alumno;
-
 begin
     reset(name);
     writeln('Ingresa el nombre del archivo .txt: ');
@@ -152,7 +152,8 @@ begin
     rewrite(txt);
     while (not eof(name)) do begin
         read(name,a);
-        if (a.sinFinal>4) then write(txt,'Alumno con código: ',a.codigo,', nombre ',a.nombre,', apellido ',a.apellido,' aprobó ',a.sinFinal,' materias sin tener el final aprobado y ',a.conFinal,' materias con el final aprobado.',#13#10);
+        if (a.sinFinal>4) then 
+            write(txt,'Alumno con código: ',a.codigo,', nombre ',a.nombre,', apellido ',a.apellido,' aprobó ',a.sinFinal,' materias sin tener el final aprobado y ',a.conFinal,' materias con el final aprobado.',#13#10);
     end;
     writeln('Archivo exportado a ',nombre);
     close(name);
@@ -171,7 +172,6 @@ var
     master:maestro;
     det:detalle;
     opcion:integer;
-
 begin
     {Randomize;
     assign(master,'ArchivoMaestroEjercicio2');

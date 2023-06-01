@@ -6,21 +6,19 @@ type
         fecha:string;
         tiempo_sesion:integer;
     end;
-    
     infoMaestro = record
         cod_usuario:integer;
         fecha:string;
         tiempo_total_de_sesiones_abiertas:integer;
     end;
-
     archivoDetalle = file of infoDetalle;
     archivoMaestro = file of infoMaestro;
     arrayDetalles = array[1..5] of archivoDetalle;
     arrayRegistrosDetalles = array[1..5] of infoDetalle;
     
 
-//ARCHIVOS DETALLES CON INFORMACION DE USUARIOS: SE DISPONE
-{
+{ARCHIVOS DETALLES CON INFORMACION DE USUARIOS: SE DISPONE
+
 procedure cargarUsuarioDetalle(var i:infoDetalle);
 begin
     writeln('Ingrese codigo de usuario: ');readln(i.cod_usuario);
@@ -64,8 +62,10 @@ end;
 
 procedure leer(var d:archivoDetalle;var i:infoDetalle);
 begin
-    if (not eof(d)) then read(d,i)
-    else i.cod_usuario:=valoralto;
+    if (not eof(d)) then 
+        read(d,i)
+    else 
+        i.cod_usuario:=valoralto;
 end;
 
 procedure buscarMinimo(var vectorDetalles:arrayDetalles; var registroDetalles:arrayRegistrosDetalles; var min: infoDetalle);
@@ -82,13 +82,13 @@ begin
             end;
         end;
     end;
-    if (min.cod_usuario<>valoralto) then leer(vectorDetalles[minPos],registroDetalles[minPos]); //si se encontro un minimo, avanzo en el archivo q contiene ese minimo
+    if (min.cod_usuario<>valoralto) then 
+        leer(vectorDetalles[minPos],registroDetalles[minPos]); //si se encontro un minimo, avanzo en el archivo q contiene ese minimo
 end;
 
 procedure inicializarArchivosDetalles(var vectorDetalles:arrayDetalles; var registroDetalles:arrayRegistrosDetalles);
 var
     i:integer;
-
 begin
     for i := 1 to 5 do begin
         reset(vectorDetalles[i]);
@@ -99,18 +99,15 @@ end;
 procedure cerrarArchivosDetalles(var vectorDetalles:arrayDetalles);
 var
     i:integer;
-
 begin
-    for i := 1 to 5 do begin
+    for i := 1 to 5 do
         close(vectorDetalles[i]);
-    end;
 end;
 
 procedure crearArchivoMaestro(var maestro:archivoMaestro;var vectorDetalles:arrayDetalles;var vectorRegistros:arrayRegistrosDetalles);
 var
     min:infoDetalle;
     actual:infoMaestro;
-
 begin
     assign(maestro,'ArchivoMaestroEjercicio4');
     rewrite(maestro);
@@ -150,22 +147,19 @@ var
     nombre,numString:string;
     vectorRegistros:arrayRegistrosDetalles;
     maestro: archivoMaestro;
-
 begin
-    randomize;
+    //randomize;
     for i := 1 to 5 do begin
-        //writeln('Cargando el archivo detalle numero: ',i);
-        //cargarArchivoDetalle(vectorDetalles[i],i);
+        {writeln('Cargando el archivo detalle numero: ',i);
+        cargarArchivoDetalle(vectorDetalles[i],i);}
         nombre:='ArchivoDetalleEjercicio4Numero';
         str(i,numString);
         nombre+=numString;
         assign(vectorDetalles[i],nombre);
-        writeln('---------------------');
         writeln('Informacion del archivo detalle numero: ',i);
         imprimirArchivoDetalle(vectorDetalles[i]);
     end;
     crearArchivoMaestro(maestro,vectorDetalles,vectorRegistros);
-    writeln('---------------------');
     writeln('Archivo maestro: ');
     imprimirArchivoMaestro(maestro);
 end.

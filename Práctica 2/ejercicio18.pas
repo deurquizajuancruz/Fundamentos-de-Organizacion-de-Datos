@@ -12,28 +12,33 @@ type
         fecha:string;
         casosPositivos:integer;
     end;
-
     archivoMaestro = file of infoMaestro;
-{
-//ARCHIVO MAESTRO: SE DISPONE
+
+{ARCHIVO MAESTRO: SE DISPONE
 
 function randomString():string;
 var
     i:integer;
 begin
     setLength(randomString,5);
-    for i := 1 to 5 do randomString[i]:=chr(random(26)+97);
+    for i := 1 to 5 do 
+        randomString[i]:=chr(random(26)+97);
 end;
 
 procedure cargarInfoMaestro(var info:infoMaestro; anteriorLocalidad,anteriorMunicipio,anteriorHospital:integer);
 begin
     writeln('Ingrese codigo de localidad: ');readln(info.codigoLocalidad); //ordenados por codigos
     if (info.codigoLocalidad<>valoralto) then begin
-        if (info.codigoLocalidad<>anteriorLocalidad) then info.nombreLocalidad:=randomString(); //si es la misma localidad, no leo de nuevo el nombre
-        writeln('Ingrese codigo de municipio: ');readln(info.codigoMunicipio);
-        if (info.codigoMunicipio<>anteriorMunicipio) then info.nombreMunicipio:=randomString(); //lo mismo con el nombre del municipio
-        writeln('Ingrese codigo de hospital: ');readln(info.codigoHospital);
-        if (info.codigoHospital<>anteriorHospital) then info.nombreHospital:=randomString();
+        if (info.codigoLocalidad<>anteriorLocalidad) then 
+            info.nombreLocalidad:=randomString(); //si es la misma localidad, no leo de nuevo el nombre
+        writeln('Ingrese codigo de municipio: ');
+        readln(info.codigoMunicipio);
+        if (info.codigoMunicipio<>anteriorMunicipio) then 
+            info.nombreMunicipio:=randomString(); //lo mismo con el nombre del municipio
+        writeln('Ingrese codigo de hospital: ');
+        readln(info.codigoHospital);
+        if (info.codigoHospital<>anteriorHospital) then 
+            info.nombreHospital:=randomString();
         info.fecha:=randomString();
         info.casosPositivos:=random(500)+1;
     end;
@@ -50,8 +55,7 @@ begin
         cargarInfoMaestro(info,info.codigoLocalidad,info.codigoMunicipio,info.codigoHospital);
     end;
     close(m);
-end;
-}
+end;}
 
 procedure imprimirArchivoMaestro(var m:archivoMaestro);
 var
@@ -71,8 +75,10 @@ end;
 
 procedure leer(var m:archivoMaestro; var info:infoMaestro);
 begin
-    if (not eof(m)) then read(m,info)
-    else info.codigoLocalidad:=valoralto;
+    if (not eof(m)) then 
+        read(m,info)
+    else 
+        info.codigoLocalidad:=valoralto;
 end;
 
 procedure recorrerArchivoMaestro(var m:archivoMaestro);
@@ -106,9 +112,8 @@ begin
                 totalMunicipio+=totalHospital;
             end;
             writeln('Cantidad de casos en el municipio ',actual.codigoMunicipio,': ',totalMunicipio);
-            if (totalMunicipio>1500) then begin
+            if (totalMunicipio>1500) then
                 write(txt,'El municipio ',actual.nombreMunicipio,' de la localidad ',actual.nombreLocalidad,' tiene ',totalMunicipio,' casos.',#13#10);
-            end;
             totalLocalidad+=totalMunicipio;
         end;
         writeln('Cantidad de casos en la localidad: ',actual.codigoLocalidad,': ',totalLocalidad);
@@ -122,7 +127,7 @@ end;
 var
     maestro:archivoMaestro;
 begin
-    randomize;
+    //randomize;
     assign(maestro,'ArchivoMaestroEjercicio18');
     //cargarArchivoMaestro(maestro);
     writeln('Archivo maestro: ');

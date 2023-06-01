@@ -18,18 +18,17 @@ type
     
     archivoMaestro = file of infoMaestro;
     archivoDetalle = file of infoDetalle;
-{
-//ARCHIVO MAESTRO: SE DISPONE
+
+{ARCHIVO MAESTRO: SE DISPONE
 
 function randomString():string;
 var
     i:integer;
-
 begin
-    setLength(randomString,6);
-    for i := 1 to 4 do randomString[i]:=chr(random(26)+97);
+    setLength(randomString,3);
+    for i := 1 to 3 do 
+        randomString[i]:=chr(random(26)+97);        
 end;
-
 
 procedure cargarInfoMaestro(var info:infoMaestro);
 begin
@@ -45,7 +44,6 @@ end;
 procedure cargarArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     rewrite(m);
     cargarInfoMaestro(info);
@@ -56,7 +54,7 @@ begin
     close(m);
 end;
 
-//ARCHIVO DETALLE: SE DISPONE
+ARCHIVO DETALLE: SE DISPONE
 
 procedure cargarInfoDetalle(var info:infoDetalle);
 begin
@@ -70,7 +68,6 @@ end;
 procedure cargarArchivoDetalle(var d:archivoDetalle);
 var
     info:infoDetalle;
-
 begin
     rewrite(d);
     cargarInfoDetalle(info);
@@ -79,13 +76,11 @@ begin
         cargarInfoDetalle(info);
     end;
     close(d);
-end;
-}
+end;}
 
 procedure imprimirArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     reset(m);
     while (not eof(m)) do begin
@@ -101,7 +96,6 @@ end;
 procedure imprimirArchivoDetalle(var d:archivoDetalle);
 var
     info:infoDetalle;
-
 begin
     reset(d);
     while (not eof(d)) do begin
@@ -113,8 +107,10 @@ end;
 
 procedure leer(var d:archivoDetalle;var info:infoDetalle);
 begin
-    if (not eof(d)) then read(d,info)
-    else info.numero:=valoralto;
+    if (not eof(d)) then 
+        read(d,info)
+    else 
+        info.numero:=valoralto;
 end;
 
 procedure actualizarMaestro(var m:archivoMaestro;var d:archivoDetalle);
@@ -123,15 +119,14 @@ var
     infoM:infoMaestro;
     cantidad:integer;
     encontrado:boolean;
-
 begin
-    reset(m);reset(d);
+    reset(m);
+    reset(d);
     leer(d,infoD); 
     read(m,infoM); 
     while (infoD.numero<>valoralto) do begin
-        while (infoD.numero>infoM.numero) do begin
+        while (infoD.numero>infoM.numero) do 
             read(m,infoM);
-        end;
         cantidad:=0;
         encontrado:=false;
         while (infoD.numero=infoM.numero) do begin
@@ -145,14 +140,14 @@ begin
             write(m,infoM);
         end;
     end;
-    close(m);close(d);    
+    close(m);
+    close(d);    
 end;
 
 procedure exportarTxt(var m:archivoMaestro);
 var
     info:infoMaestro;
     txt:text;
-
 begin
     reset(m);
     assign(txt,'ArchivoMaestroEjercicio13.txt');
@@ -168,9 +163,8 @@ end;
 var
     maestro:archivoMaestro;
     detalle:archivoDetalle;
-
 begin
-    randomize;
+    //randomize;
     assign(maestro,'ArchivoMaestroEjercicio13');
     //cargarArchivoMaestro(maestro);
     writeln('Archivo maestro: ');
@@ -179,7 +173,7 @@ begin
     //cargarArchivoDetalle(detalle);
     writeln('Archivo detalle: ');
     imprimirArchivoDetalle(detalle);
-    //actualizarMaestro(maestro,detalle);
+    actualizarMaestro(maestro,detalle);
     writeln('Archivo maestro actualizado: ');
     imprimirArchivoMaestro(maestro);
     exportarTxt(maestro);

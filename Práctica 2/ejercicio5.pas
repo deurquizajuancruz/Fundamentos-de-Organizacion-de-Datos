@@ -8,8 +8,7 @@ type
         piso:integer;
         depto:integer;
         ciudad:string;
-    end;
-    
+    end;    
     infoDetalleNacimiento = record
         numeroPartida:integer;
         nombre:string;
@@ -20,8 +19,7 @@ type
         dniMadre:integer;
         nombreApellidoPadre:string;
         dniPadre:integer;
-    end;
-    
+    end;    
     infoDetalleFallecimiento = record
         numeroPartida:integer;
         dni:integer;
@@ -30,7 +28,6 @@ type
         fechaHora:string;
         lugar:string;
     end;
-
     infoMaestro = record
         numeroPartida:integer;
         nombre:string;
@@ -46,7 +43,6 @@ type
         fechaHora:string;
         lugar:string;
     end;
-
     archivoDetalleNacimiento = file of infoDetalleNacimiento;
     archivoDetalleFallecimiento = file of infoDetalleFallecimiento;
     archivoMaestro = file of infoMaestro;
@@ -89,16 +85,10 @@ begin
     end;
 end;
 
-procedure cargarArchivoNacimiento(var name:archivoDetalleNacimiento;num:integer);
+procedure cargarArchivoNacimiento(var name:archivoDetalleNacimiento);
 var
-    nombre,numString:string;
     d:infoDetalleNacimiento;
-    
 begin
-    nombre:='ArchivoDetalleNacimientoEjercicio5Numero';
-    str(num,numString);
-    nombre+=numString;
-    assign(name,nombre);
     rewrite(name);
     cargarNacimiento(d);
     while (d.numeroPartida<>0) do begin
@@ -122,16 +112,10 @@ begin
     end;
 end;
 
-procedure cargarArchivoFallecimiento(var name:archivoDetalleFallecimiento;num:integer);
+procedure cargarArchivoFallecimiento(var name:archivoDetalleFallecimiento);
 var
-    nombre,numString:string;
     d:infoDetalleFallecimiento;
-
 begin
-    nombre:='ArchivoDetalleFallecimientoEjercicio5Numero';
-    str(num,numString);
-    nombre+=numString;
-    assign(name,nombre);
     rewrite(name);
     cargarFallecimiento(d);
     while (d.numeroPartida<>0) do begin
@@ -145,10 +129,8 @@ end;
 procedure imprimirArchivoNacimiento(var nacimiento:archivoDetalleNacimiento;num:integer);
 var
     n:infoDetalleNacimiento;
-
 begin
     reset(nacimiento);
-    writeln('------------');
     writeln('Informacion del archivo detalle nacimiento numero ',num);
     while (not eof(nacimiento)) do begin
         read(nacimiento,n);
@@ -159,7 +141,6 @@ begin
         'Matricula del medico: ',n.matriculaMedico,#13#10,
         'Madre: ',n.nombreApellidoMadre,' ',n.dniMadre,#13#10,
         'Padre: ',n.nombreApellidoPadre,' ',n.dniPadre);
-        writeln('-----------------');
     end;
     close(nacimiento);    
 end;
@@ -167,10 +148,8 @@ end;
 procedure imprimirArchivoFallecimiento(var f:archivoDetalleFallecimiento;num:integer);
 var
     m:infoDetalleFallecimiento;
-
 begin
     reset(f);
-    writeln('------------');
     writeln('Informacion del archivo detalle fallecimiento numero ',num);
     while (not eof(f)) do begin
         read(f,m);
@@ -180,7 +159,6 @@ begin
         'Matricula del medico que firmo el deceso: ',m.matriculaMedico,#13#10,
         'Fecha y hora de la muerte: ',m.fechaHora,#13#10,
         'Lugar de la muerte: ',m.lugar);
-        writeln('------------');
     end;
     close(f);
 end;
@@ -188,7 +166,6 @@ end;
 procedure asignacionArchivosDetalles(var nacido:archivoDetalleNacimiento;var fallecido:archivoDetalleFallecimiento;num:integer);
 var
     nombre,numString:string;
-
 begin
     nombre:='ArchivoDetalleNacimientoEjercicio5Numero';
     str(num,numString);
@@ -201,20 +178,23 @@ end;
 
 procedure leerNacimiento(var name:archivoDetalleNacimiento;var n:infoDetalleNacimiento);
 begin
-    if (not eof(name)) then read(name,n)
-    else n.numeroPartida:=valoralto;
+    if (not eof(name)) then 
+        read(name,n)
+    else 
+        n.numeroPartida:=valoralto;
 end;
 
 procedure leerFallecimiento(var name:archivoDetalleFallecimiento; var f:infoDetalleFallecimiento);
 begin
-    if (not eof(name)) then read(name,f)
-    else f.numeroPartida:=valoralto;
+    if (not eof(name)) then 
+        read(name,f)
+    else 
+        f.numeroPartida:=valoralto;
 end;
 
 procedure inicializarArchivosDetalles(var nacimientos:arrayNacimientos; var fallecimientos:arrayFallecimientos; var registrosN: arrayRegistrosNacimientos; var registrosF:arrayRegistrosFallecimientos);
 var
     i:integer;
-
 begin
     for i := 1 to 50 do begin
         reset(nacimientos[i]);
@@ -227,7 +207,6 @@ end;
 procedure cerrarArchivosDetalles(var n:arrayNacimientos;f:arrayFallecimientos);
 var
     i:integer;
-
 begin
     for i := 1 to 50 do begin
         close(n[i]);
@@ -248,13 +227,13 @@ begin
             end;
         end;
     end;
-    if (min.numeroPartida<>valoralto) then leerNacimiento(nacimientos[minPos],registrosN[minPos]);
+    if (min.numeroPartida<>valoralto) then 
+        leerNacimiento(nacimientos[minPos],registrosN[minPos]);
 end;
 
 procedure buscarMinimoF(var fallecimientos:arrayFallecimientos;var registrosF:arrayRegistrosFallecimientos;var min:infoDetalleFallecimiento);
 var
     i,minPos:integer;
-
 begin
     min.numeroPartida:=valoralto;
     for i := 1 to 50 do begin
@@ -265,7 +244,8 @@ begin
             end;
         end;
     end;
-    if (min.numeroPartida<>valoralto) then leerFallecimiento(fallecimientos[minPos],registrosF[minPos]);
+    if (min.numeroPartida<>valoralto) then 
+        leerFallecimiento(fallecimientos[minPos],registrosF[minPos]);
 end;
 
 procedure crearArchivoMaestro(var maestro:archivoMaestro;var nacimientos:arrayNacimientos; var fallecimientos:arrayFallecimientos);
@@ -275,7 +255,6 @@ var
     minN:infoDetalleNacimiento;
     minF:infoDetalleFallecimiento;
     actual:infoMaestro;
-
 begin
     assign(maestro,'ArchivoMaestroEjercicio5');
     rewrite(maestro);
@@ -283,16 +262,27 @@ begin
     buscarMinimoN(nacimientos,registrosN,minN); // buscar el nro de partida minimo en archivo detalle de nacimiento
     buscarMinimoF(fallecimientos,registrosF,minF);// buscar el nro de partida minimo en archivo detalle de fallecimiento
     while (minN.numeroPartida<>valoralto) do begin
-        actual.numeroPartida:=minN.numeroPartida; actual.nombre:=minN.nombre; actual.apellido:=minN.apellido; actual.direc:=minN.direc; actual.matriculaMedico:=minN.matriculaMedico; actual.nombreApellidoMadre:=minN.nombreApellidoMadre; actual.dniMadre:=minN.dniMadre; actual.nombreApellidoPadre:=minN.nombreApellidoPadre; actual.dniPadre:=minN.dniPadre;
+        actual.numeroPartida:=minN.numeroPartida; 
+        actual.nombre:=minN.nombre; 
+        actual.apellido:=minN.apellido; 
+        actual.direc:=minN.direc; 
+        actual.matriculaMedico:=minN.matriculaMedico; 
+        actual.nombreApellidoMadre:=minN.nombreApellidoMadre; 
+        actual.dniMadre:=minN.dniMadre; 
+        actual.nombreApellidoPadre:=minN.nombreApellidoPadre; 
+        actual.dniPadre:=minN.dniPadre;
         if (minN.numeroPartida=minF.numeroPartida) then begin // si se encontro la persona fallecida
-            actual.fallecido:=true; actual.matriculaMedicoFallecido:=minF.matriculaMedico; actual.fechaHora:=minF.fechaHora; actual.lugar:=minF.lugar;
+            actual.fallecido:=true; 
+            actual.matriculaMedicoFallecido:=minF.matriculaMedico; 
+            actual.fechaHora:=minF.fechaHora; 
+            actual.lugar:=minF.lugar;
         end
-        else begin // si no se encontro, tengo q volver a la posicion siguiente en los registros de fallecimiento
+        else // si no se encontro, tengo q volver a la posicion siguiente en los registros de fallecimiento
             actual.fallecido:=false;
-        end;
         write(maestro,actual); // agregar la info al archivo maestro
         buscarMinimoN(nacimientos,registrosN,minN);
-        if (actual.fallecido) then buscarMinimoF(fallecimientos,registrosF,minF);
+        if (actual.fallecido) then 
+            buscarMinimoF(fallecimientos,registrosF,minF);
     end;
     cerrarArchivosDetalles(nacimientos,fallecimientos);
     close(maestro);
@@ -305,7 +295,6 @@ begin
     reset(name);
     while(not eof(name)) do begin
         read(name,info);
-        writeln('-----------------');
         writeln('Numero de partida: ',info.numeroPartida,#13#10,
         'Nombre y apellido: ',info.nombre,' ',info.apellido,#13#10,
         'Direccion: ',#13#10,
@@ -313,9 +302,8 @@ begin
         'Matricula del medico: ',info.matriculaMedico,#13#10,
         'Info madre: ',info.nombreApellidoMadre, ' DNI ',info.dniMadre,#13#10,
         'Info padre: ',info.nombreApellidoPadre, ' DNI ',info.dniPadre);
-        if (info.fallecido) then begin
+        if (info.fallecido) then
             writeln('Fallecido en ',info.lugar,' a las ',info.fechaHora,' deceso firmado por ',info.matriculaMedicoFallecido);
-        end;
     end;
     close(name);
 end;
@@ -324,7 +312,6 @@ procedure exportarArchivoMaestroTxt(var maestro:archivoMaestro);
 var
     txt:text;
     info:infoMaestro;
-
 begin
     reset(maestro);
     assign(txt,'ArchivoMaestroEjercicio5.txt');
@@ -339,13 +326,13 @@ begin
         'Matricula del medico: ',info.matriculaMedico,#13#10,
         'Info madre: ',info.nombreApellidoMadre, ' DNI ',info.dniMadre,#13#10,
         'Info padre: ',info.nombreApellidoPadre, ' DNI ',info.dniPadre,#13#10);
-        if (info.fallecido) then begin
+        if (info.fallecido) then
             write(txt,'Fallecido en ',info.lugar,' a las ',info.fechaHora,' deceso firmado por ',info.matriculaMedicoFallecido,#13#10);
-        end;
         write(txt,'------------',#13#10);
     end;
     writeln('Archivo maestro exportado a txt');
-    close(maestro);close(txt);
+    close(maestro);
+    close(txt);
 end;
 
 var
@@ -353,20 +340,27 @@ var
     vectorFallecidos:arrayFallecimientos;
     vectorNacidos:arrayNacimientos;
     maestro:archivoMaestro;
-
+    nombre,numString:string;
 begin
     randomize;
     for i := 1 to 50 do begin
+        nombre:='ArchivoDetalleNacimientoEjercicio5Numero';
+        str(i,numString);
+        nombre+=numString;
+        assign(vectorNacidos[i],nombre);
         {writeln('Cargando archivo detalle nacimiento numero ',i);
-        cargarArchivoNacimiento(vectorNacidos[i],i);
-        writeln('Cargando archivo detalle fallecimiento numero ',i);
+        cargarArchivoNacimiento(vectorNacidos[i]);}
+        nombre:='ArchivoDetalleFallecimientoEjercicio5Numero';
+        str(i,numString);
+        nombre+=numString;
+        assign(vectorFallecidos[i],nombre);
+        {writeln('Cargando archivo detalle fallecimiento numero ',i);
         cargarArchivoFallecimiento(vectorFallecidos[i],i);}
         asignacionArchivosDetalles(vectorNacidos[i],vectorFallecidos[i],i);
         imprimirArchivoNacimiento(vectorNacidos[i],i);
         imprimirArchivoFallecimiento(vectorFallecidos[i],i);
     end;
     crearArchivoMaestro(maestro,vectorNacidos,vectorFallecidos);
-    writeln('-----------------');
     writeln('Archivo maestro: ');
     imprimirArchivoMaestro(maestro);
     exportarArchivoMaestroTxt(maestro);

@@ -7,18 +7,16 @@ type
         alfabetizados:integer;
         encuestados:integer;
     end;
-
     infoDetalle = record
         nombreProvincia:string;
         localidad:integer;
         alfabetizados:integer;
         encuestados:integer;
     end;
-
     archivoMaestro = file of infoMaestro;
     archivoDetalle = file of infoDetalle;
-{
-ARCHIVO MAESTRO: SE DISPONE
+
+{ARCHIVO MAESTRO: SE DISPONE
 
 procedure cargarInfoMaestro(var info:infoMaestro);
 begin
@@ -32,7 +30,6 @@ end;
 procedure cargarArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     rewrite(m);
     cargarInfoMaestro(info);
@@ -58,7 +55,6 @@ end;
 procedure cargarArchivoDetalle(var d:archivoDetalle);
 var
     info:infoDetalle;
-
 begin
     rewrite(d);
     cargarInfoDetalle(info);
@@ -73,7 +69,6 @@ end;
 procedure imprimirArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     reset(m);
     while (not eof(m)) do begin
@@ -86,7 +81,6 @@ end;
 procedure imprimirArchivoDetalle(var d:archivoDetalle);
 var
     info:infoDetalle;
-
 begin
     reset(d);
     while (not eof(d)) do begin
@@ -98,23 +92,24 @@ end;
 
 procedure leer(var d:archivoDetalle; var info:infoDetalle);
 begin
-    if (not eof(d)) then read(d,info)
-    else info.nombreProvincia:=valoralto;
+    if (not eof(d)) then 
+        read(d,info)
+    else 
+        info.nombreProvincia:=valoralto;
 end;
 
 procedure actualizarMaestro(var m:archivoMaestro;var d:archivoDetalle);
 var
     infoD:infoDetalle;
     infoM:infoMaestro;
-
 begin
-    reset(m); reset(d);
+    reset(m); 
+    reset(d);
     leer(d,infoD);
     read(m,infoM);
     while (infoD.nombreProvincia<>valoralto) do begin
-        while (infoM.nombreProvincia<>infoD.nombreProvincia) do begin
+        while (infoM.nombreProvincia<>infoD.nombreProvincia) do
             read(m,infoM);
-        end;
         while (infoM.nombreProvincia=infoD.nombreProvincia) do begin
             infoM.alfabetizados+=infoD.alfabetizados;
             infoM.encuestados+=infoD.encuestados;
@@ -123,15 +118,15 @@ begin
         seek(m,filepos(m)-1);
         write(m,infoM);
     end;
-    close(m); close(d);
+    close(m); 
+    close(d);
 end;
 
 var
     maestro:archivoMaestro;
     detalle1,detalle2:archivoDetalle;
-
 begin
-    randomize;
+    //randomize;
     assign(maestro,'ArchivoMaestroEjercicio11');
     assign(detalle1,'ArchivoDetalleEjercicio11Numero1');
     assign(detalle2,'ArchivoDetalleEjercicio11Numero2');

@@ -11,11 +11,10 @@ type
         id:integer;
         tiempoAcceso:real;
     end;
-
     archivoMaestro = file of infoMaestro;
 
-{
-    ARCHIVO MAESTRO: SE DISPONE
+{ARCHIVO MAESTRO: SE DISPONE
+
 procedure cargarInfoMaestro(var info:infoMaestro);
 begin
     writeln('Ingrese anio: ');readln(info.anio);
@@ -30,7 +29,6 @@ end;
 procedure cargarArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     rewrite(m);
     cargarInfoMaestro(info);
@@ -39,13 +37,11 @@ begin
         cargarInfoMaestro(info);
     end;
     close(m);
-end;
-}
+end;}
 
 procedure imprimirArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     reset(m);
     while (not eof(m)) do begin
@@ -61,8 +57,10 @@ end;
 
 procedure leer(var m:archivoMaestro;var info:infoMaestro);
 begin
-    if (not eof(m)) then read(m,info)
-    else info.anio:=valoralto;
+    if (not eof(m)) then 
+        read(m,info)
+    else 
+        info.anio:=valoralto;
 end;
 
 procedure recorrerArchivo(var m:archivoMaestro);
@@ -70,7 +68,6 @@ var
     anioBuscado:integer;
     info,actual:infoMaestro;
     totalAccesoAnio,totalAccesoMes,totalAccesoDia,totalAccesoUsuario:real;
-
 begin
     writeln('Ingrese el anio a buscar: ');readln(anioBuscado);
     reset(m);
@@ -109,7 +106,8 @@ begin
             end;
             writeln('Tiempo total anio: ',totalAccesoAnio:0:2);
         end
-        else writeln('Anio no encontrado');
+        else 
+            writeln('Anio no encontrado');
     end;
     close(m);
 end;
@@ -119,7 +117,7 @@ var
 begin
     randomize;
     assign(maestro,'ArchivoMaestroEjercicio12');
-    //cargarArchivoMaestro(maestro);
+    cargarArchivoMaestro(maestro);
     imprimirArchivoMaestro(maestro);
     recorrerArchivo(maestro);
 end.

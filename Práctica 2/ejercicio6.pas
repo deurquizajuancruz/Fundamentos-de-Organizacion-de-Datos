@@ -10,7 +10,6 @@ type
         recuperados:integer;
         fallecidos:integer;
     end;
-
     infoMaestro = record
         localidad:integer;
         nombre:string;
@@ -21,7 +20,6 @@ type
         recuperados:integer;
         fallecidos:integer;
     end;
-
     archivoDetalle = file of infoDetalle;
     archivoMaestro = file of infoMaestro;
     arrayDetalles = array [1..10] of archivoDetalle;
@@ -61,27 +59,25 @@ begin
     close(d);
 end;
 
-
 ARCHIVO MAESTRO: SE DISPONE
 
 function randomString():string;
 var
     i:integer;
-    s:string;
 begin
-    setLength(s,3);
-    for i := 1 to 3 do begin
-        s[i]:=chr(random(26)+97);
-    end;
-    randomString:=s;
+    setLength(randomString,3);
+    for i := 1 to 3 do 
+        randomString[i]:=chr(random(26)+97);        
 end;
 
 procedure cargarInfoMaestro(var info:infoMaestro);
 begin
-    writeln('Ingrese codigo de localidad: ');readln(info.localidad);
+    writeln('Ingrese codigo de localidad: ');
+    readln(info.localidad);
     if (info.localidad<>0) then begin
         info.nombre:=randomString();
-        writeln('Ingrese codigo de cepa: ');readln(info.cepa);
+        writeln('Ingrese codigo de cepa: ');
+        readln(info.cepa);
         info.nombreCepa:=randomString();
         info.activos:=random(100)+1;
         info.nuevos:=random(100)+1;
@@ -94,7 +90,6 @@ procedure cargarArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
 begin
-    assign(m,'ArchivoMaestroEjercicio6');
     rewrite(m);
     cargarInfoMaestro(info);
     while (info.localidad<>0) do begin
@@ -141,14 +136,15 @@ end;
 
 procedure leer(var d:archivoDetalle;var info:infoDetalle);
 begin
-    if (not eof(d)) then read(d,info)
-    else info.localidad:=valoralto;
+    if (not eof(d)) then 
+        read(d,info)
+    else 
+        info.localidad:=valoralto;
 end;
 
 procedure inicializarArchivosDetalles(var vectorDetalles:arrayDetalles; var registroDetalles:arrayRegistrosDetalles);
 var
     i:integer;
-
 begin
     for i := 1 to 10 do begin
         reset(vectorDetalles[i]);
@@ -159,7 +155,6 @@ end;
 procedure cerrarArchivosDetalles(var vectorDetalles:arrayDetalles);
 var
     i:integer;
-
 begin
     for i := 1 to 10 do begin
         close(vectorDetalles[i]);
@@ -169,7 +164,6 @@ end;
 procedure buscarMinimo(var vectorDetalles:arrayDetalles;var vectorRegistros:arrayRegistrosDetalles;var min:infoDetalle);
 var
     i,minPos:integer;
-
 begin
     min.localidad:=valoralto;
     min.cepa:=valoralto;
@@ -181,7 +175,8 @@ begin
             end;
         end;    
     end;
-    if (min.localidad<>valoralto) then leer(vectorDetalles[minPos],vectorRegistros[minPos]);
+    if (min.localidad<>valoralto) then 
+        leer(vectorDetalles[minPos],vectorRegistros[minPos]);
 end;
 
 procedure actualizarMaestro(var m:archivoMaestro;var vectorDetalles:arrayDetalles);
@@ -189,20 +184,17 @@ var
     min:infoDetalle;
     actual:infoMaestro;  
     vectorRegistros:arrayRegistrosDetalles;
-
 begin
     reset(m);
     inicializarArchivosDetalles(vectorDetalles,vectorRegistros);
     buscarMinimo(vectorDetalles,vectorRegistros,min);
     read(m,actual);
     while (min.localidad<>valoralto) do begin
-        while (actual.localidad<>min.localidad) do begin
-            read(m,actual);
-        end; // si sale de este loop es porque las localidades son iguales
+        while (actual.localidad<>min.localidad) do
+            read(m,actual); // si sale de este loop es porque las localidades son iguales
         while (min.localidad<>valoralto) and (actual.localidad=min.localidad) do begin //mientras sea la misma localidad, busco la cepa
-            while (actual.cepa<>min.cepa) do begin
+            while (actual.cepa<>min.cepa) do
                 read(m,actual); //busco la cepa igual
-            end;
             while (min.localidad<>valoralto) and (actual.localidad=min.localidad) and (actual.cepa=min.cepa) do begin //mientras sea la misma localidad y misma cepa, actualizo
                 actual.fallecidos+=min.fallecidos;
                 actual.recuperados+=min.recuperados;
@@ -223,9 +215,8 @@ var
     vectorDetalles:arrayDetalles;
     nombre,numString:string;
     maestro:archivoMaestro;
-    
 begin
-    randomize;
+    //randomize;
     for i := 1 to 10 do begin
         //cargarArchivoDetalle(vectorDetalles[i],i);
         nombre:='ArchivoDetalleEjercicio6Numero';
@@ -234,13 +225,11 @@ begin
         assign(vectorDetalles[i],nombre);
         writeln('Informacion archivo detalle numero: ',i);    
         imprimirArchivoDetalle(vectorDetalles[i]);
-        writeln('------------');
     end;
+    assign(maestro,'ArchivoMaestroEjercicio6');
     //cargarArchivoMaestro(maestro);
     writeln('Archivo maestro: ');
-    assign(maestro,'ArchivoMaestroEjercicio6');
     imprimirArchivoMaestro(maestro);
-    writeln('-------------');
     writeln('Archivo maestro actualizado: ');
     actualizarMaestro(maestro,vectorDetalles);
     imprimirArchivoMaestro(maestro);

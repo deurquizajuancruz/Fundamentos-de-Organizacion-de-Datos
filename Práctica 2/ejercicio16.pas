@@ -11,28 +11,27 @@ type
         totalEjemplares:integer;
         totalEjemplaresVendido:integer;
     end;
-
     infoDetalle = record
         fecha:string;
         codigoSemanario:integer;
         cantidadVendida:integer;
     end;
-
     archivoDetalle = file of infoDetalle;
     archivoMaestro = file of infoMaestro;
     arrayDetalles = array [1..100] of archivoDetalle;
     arrayRegistrosDetalles = array [1..100] of infoDetalle;
 
 
-//ARCHIVO MAESTRO: SE DISPONE
-{
+{ARCHIVO MAESTRO: SE DISPONE
+
 function randomString():string;
 var
     i:integer;
 
 begin
     setLength(randomString,5);
-    for i := 1 to 5 do randomString[i]:=chr(random(26)+97);
+    for i := 1 to 5 do 
+        randomString[i]:=chr(random(26)+97);
 end;
 
 procedure cargarInfoMaestro(var info:infoMaestro);
@@ -51,7 +50,6 @@ end;
 procedure cargarArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     rewrite(m);
     cargarInfoMaestro(info);
@@ -62,13 +60,15 @@ begin
     close(m);
 end;
 
-//ARCHIVOS DETALLE: SE DISPONEN
+ARCHIVOS DETALLE: SE DISPONEN
 
 procedure cargarInfoDetalle(var info:infoDetalle);
 begin
-    writeln('Ingrese fecha de emision: ');readln(info.fecha);
+    writeln('Ingrese fecha de emision: ');
+    readln(info.fecha);
     if (info.fecha<>valoralto) then begin
-        writeln('Ingrese codigo de semanario: ');readln(info.codigoSemanario);
+        writeln('Ingrese codigo de semanario: ');
+        readln(info.codigoSemanario);
         info.cantidadVendida:=random(80)+1;
     end;
 end;
@@ -76,7 +76,6 @@ end;
 procedure cargarArchivoDetalle(var name:archivoDetalle);
 var
     info:infoDetalle;
-
 begin
     rewrite(name);
     cargarInfoDetalle(info);
@@ -85,13 +84,11 @@ begin
         cargarInfoDetalle(info);
     end;
     close(name);
-end;
-}
+end;}
 
 procedure imprimirArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     reset(m);
     while (not eof(m)) do begin
@@ -110,7 +107,6 @@ end;
 procedure imprimirArchivoDetalle(var d:archivoDetalle);
 var
     info:infoDetalle;
-
 begin
     reset(d);
     while (not eof(d)) do begin
@@ -124,8 +120,10 @@ end;
 
 procedure leer(var d:archivoDetalle; var info:infoDetalle);
 begin
-    if (not eof(d)) then read(d,info)
-    else info.fecha:=valoralto;
+    if (not eof(d)) then 
+        read(d,info)
+    else 
+        info.fecha:=valoralto;
 end;
 
 procedure buscarMinimo(var vectorDetalles:arrayDetalles; var min:infoDetalle; var vectorRegistros:arrayRegistrosDetalles);
@@ -142,7 +140,8 @@ begin
             end; 
         end;
     end;
-    if (min.fecha<>valoralto) then leer(vectorDetalles[minPos],vectorRegistros[minPos]);
+    if (min.fecha<>valoralto) then 
+        leer(vectorDetalles[minPos],vectorRegistros[minPos]);
 end;
 
 procedure inicializarArchivosDetalles(var vectorDetalles:arrayDetalles; var vectorRegistros:arrayRegistrosDetalles);
@@ -159,9 +158,8 @@ procedure cerrarArchivosDetalles(var vectorDetalles:arrayDetalles);
 var
     i:integer;
 begin
-    for i := 1 to 100 do begin
+    for i := 1 to 100 do
         close(vectorDetalles[i]);
-    end;
 end;
 
 procedure actualizarMaestro(var m:archivoMaestro; var vectorDetalles:arrayDetalles);
@@ -178,13 +176,11 @@ begin
     maximo:=-1;
     minimo:=32760;
     while (min.fecha<>valoralto) do begin
-        while (min.fecha>infoM.fecha) do begin
+        while (min.fecha>infoM.fecha) do
             read(m,infoM);
-        end;
         while (min.fecha=infoM.fecha) do begin
-            while (min.codigoSemanario>infoM.codigoSemanario) do begin
+            while (min.codigoSemanario>infoM.codigoSemanario) do
                 read(m,infoM);
-            end;
             totalVentas:=0;
             while (min.fecha=infoM.fecha) and (min.codigoSemanario=infoM.codigoSemanario) do begin
                 if (min.cantidadVendida<=infoM.totalEjemplares) then begin // tiene que haber ejemplares disponibles para poder vender
@@ -218,7 +214,7 @@ var
     i:integer;
     numString,nombre:string;
 begin
-    randomize;
+    //randomize;
     assign(maestro,'ArchivoMaestroEjercicio16');
     //cargarArchivoMaestro(maestro);
     writeln('Archivo maestro: ');

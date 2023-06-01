@@ -9,28 +9,22 @@ type
         stockActual:integer;
         stockMinimo:integer;
     end;
-
     infoDetalle = record
         codigo:integer;
         vendidas:integer;
     end;
-
     archivoMaestro = file of infoMaestro;
     archivoDetalle = file of infoDetalle;
 
-{
-ARCHIVO MAESTRO: SE DISPONE
+{ARCHIVO MAESTRO: SE DISPONE
 
 function randomString():string;
 var
     i:integer;
-    s:string;
 begin
-    setLength(s,3);
-    for i := 1 to 3 do begin
-        s[i]:=chr(random(26)+97);
-    end;
-    randomString:=s;
+    setLength(randomString,3);
+    for i := 1 to 3 do 
+        randomString[i]:=chr(random(26)+97);        
 end;
 
 procedure cargarInfoMaestro(var info:infoMaestro);
@@ -60,14 +54,15 @@ end;
 
 procedure cargarInfoDetalle(var info:infoDetalle);
 begin
-    writeln('Ingrese codigo de producto: ');readln(info.codigo);
-    if (info.codigo<>0) then info.vendidas:=random(50)+1;
+    writeln('Ingrese codigo de producto: ');
+    readln(info.codigo);
+    if (info.codigo<>0) then 
+        info.vendidas:=random(50)+1;
 end;
 
 procedure cargarArchivoDetalle(var d:archivoDetalle);
 var
     info:infoDetalle;
-
 begin
     rewrite(d);
     cargarInfoDetalle(info);
@@ -77,13 +72,11 @@ begin
     end;
     close(d);
 end;
-
 }
 
 procedure imprimirArchivoDetalle(var d:archivoDetalle);
 var
     info:infoDetalle;
-
 begin
     reset(d);
     while (not eof(d)) do begin
@@ -96,7 +89,6 @@ end;
 procedure imprimirArchivoMaestro(var m:archivoMaestro);
 var
     info:infoMaestro;
-
 begin
     reset(m);
     while (not eof(m)) do begin
@@ -112,62 +104,62 @@ end;
 
 procedure leer(var d:archivoDetalle;var info:infoDetalle);
 begin
-    if (not eof(d)) then read(d,info)
-    else info.codigo:=valoralto;
+    if (not eof(d)) then 
+        read(d,info)
+    else 
+        info.codigo:=valoralto;
 end;
 
 procedure actualizarMaestro(var m:archivoMaestro;var d:archivoDetalle);
 var
     infoD:infoDetalle;
     actual:infoMaestro;
-
 begin
-    reset(m); reset(d);
+    reset(m); 
+    reset(d);
     leer(d,infoD);
     read(m,actual);
     while (infoD.codigo<>valoralto) do begin
-        while (infoD.codigo<>actual.codigo) do begin
+        while (infoD.codigo<>actual.codigo) do
             read(m,actual);
-        end;
         while (infoD.codigo=actual.codigo) do begin
-            if (infoD.vendidas>=actual.stockActual) then actual.stockActual:=0
-            else begin
+            if (infoD.vendidas>=actual.stockActual) then 
+                actual.stockActual:=0
+            else
                 actual.stockActual-=infoD.vendidas;
-            end;
             leer(d,infoD);
         end;
         seek(m,filepos(m)-1);
         write(m,actual);
     end;
-    close(m);close(d);
+    close(m);
+    close(d);
 end;
 
 procedure exportarTxt(var m:archivoMaestro);
 var
     info:infoMaestro;
     txt:text;
-
 begin
     assign(txt,'stock_minimoEjercicio7.txt');
     rewrite(txt);
     reset(m);
     while(not eof(m)) do begin
         read(m,info);
-        if (info.stockActual<info.stockMinimo) then begin
+        if (info.stockActual<info.stockMinimo) then
             write(txt,'Producto ',info.codigo,' con nombre ',info.nombre,' precio ',info.precio:0:2,' tiene un stock actual de ',info.stockActual,' menor a ',info.stockMinimo,', el stock minimo',#13#10);
-        end;
     end;
     writeln('Archivo maestro exportado a txt');
-    close(m);close(txt);
+    close(m);
+    close(txt);
 end;
 
 var
     maestro:archivoMaestro;
     detalle:archivoDetalle;
     opcion:integer;
-
 begin
-    randomize;
+    //randomize;
     assign(maestro,'ArchivoMaestroEjercicio7');
     assign(detalle,'ArchivoDetalleEjercicio7');
     {cargarArchivoMaestro(maestro);
