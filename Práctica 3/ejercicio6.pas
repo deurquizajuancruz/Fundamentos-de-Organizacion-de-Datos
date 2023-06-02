@@ -2,8 +2,7 @@ program Ejercicio6Practica3;
 type
     infoDetalle = record
         cod_prenda:integer;
-    end;
-    
+    end;  
     infoMaestro = record
         prenda:infoDetalle;
         descripcion:string;
@@ -12,11 +11,10 @@ type
         stock:integer;
         precio_unitario:real;
     end;
-
     archivoMaestro = file of infoMaestro;
     archivoDetalle = file of infoDetalle;
-{
-//ARCHIVO MAESTRO: SE DISPONE
+
+{ARCHIVO MAESTRO: SE DISPONE
 
 function randomString():string;
 var
@@ -65,8 +63,7 @@ begin
         readln(obsoleta.cod_prenda);
     end;
     close(name);
-end;
-}
+end;}
 
 procedure imprimirArchivoMaestro(var name:archivoMaestro);
 var
@@ -102,14 +99,14 @@ begin
         read(detalle,infoD);
         seek(maestro,0);
         read(maestro,infoM);
-        while (infoD.cod_prenda<>infoM.prenda.cod_prenda) do begin
+        while (infoD.cod_prenda<>infoM.prenda.cod_prenda) do
             read(maestro,infoM);
-        end;
         seek(maestro,filepos(maestro)-1);
         infoM.stock:=infoM.stock*-1;
         write(maestro,infoM);
     end;
-    close(maestro); close(detalle);
+    close(maestro); 
+    close(detalle);
 end;
 
 procedure bajaFisica(var maestro,auxiliar:archivoMaestro);
@@ -121,7 +118,8 @@ begin
     rewrite(auxiliar);
     while (not eof(maestro)) do begin
         read(maestro,info);
-        if (info.stock>0) then write(auxiliar,info);
+        if (info.stock>0) then 
+            write(auxiliar,info);
     end;
     close(auxiliar);    
     close(maestro);
@@ -132,11 +130,11 @@ var
     maestro,auxiliar:archivoMaestro;
     detalle:archivoDetalle;
 begin
-    randomize;
+    //randomize;
     assign(maestro,'ArchivoMaestroEjercicio6');
     assign(detalle,'ArchivoDetalleEjercicio6');
-    //crearArchivoMaestro(maestro);
-    //cargarArchivoDetalle(detalle);
+    {crearArchivoMaestro(maestro);
+    cargarArchivoDetalle(detalle);}
     imprimirArchivoMaestro(maestro);
     imprimirArchivoDetalle(detalle);
     bajaLogica(maestro,detalle);

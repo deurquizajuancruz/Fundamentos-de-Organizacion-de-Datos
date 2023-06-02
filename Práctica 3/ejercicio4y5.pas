@@ -55,9 +55,7 @@ begin
         close(a);
     end
     else
-    begin
         writeln('No se puede agregar la flor ',nombre,' con el codigo ',codigo,' debido a que ya existe en el archivo.');
-    end;
 end;
 
 procedure listarFlores(var name:tArchFlores);
@@ -68,7 +66,8 @@ begin
     read(name,flor); //salteo la cabecera
     while (not eof(name)) do begin
         read(name,flor);
-        if (flor.codigo>0) then writeln('Flor con nombre: ',flor.nombre,' y codigo: ',flor.codigo);
+        if (flor.codigo>0) then 
+            writeln('Flor con nombre: ',flor.nombre,' y codigo: ',flor.codigo);
     end;
     close(name);
 end;
@@ -88,9 +87,8 @@ begin
         writeln('Se elimino la flor correctamente.');
         close(name);
     end
-    else begin
+    else 
         writeln('No se encontro una flor con esos datos.');
-    end;
 end;
 
 var

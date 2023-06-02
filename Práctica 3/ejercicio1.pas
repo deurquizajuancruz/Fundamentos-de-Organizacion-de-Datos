@@ -14,7 +14,8 @@ var
     i:integer;
 begin
     setLength(randomString,3);
-    for i := 1 to 3 do randomString[i]:=chr(random(26)+97);        
+    for i := 1 to 3 do 
+        randomString[i]:=chr(random(26)+97);        
 end;
 
 procedure leerEmpleado(var e: empleado);
@@ -86,7 +87,8 @@ begin
     writeln('Ingrese el nombre o apellido a buscar: ');readln(busqueda);
     while (not eof(name)) do begin
         read(name,e);
-        if ((e.nombre=busqueda) or (e.apellido=busqueda)) then imprimirEmpleado(e);
+        if ((e.nombre=busqueda) or (e.apellido=busqueda)) then 
+            imprimirEmpleado(e);
     end;
     close(name);
 end;
@@ -112,7 +114,8 @@ begin
     reset(name);
     while (not eof(name)) do begin
         read(name,e);
-        if (e.edad>70) then imprimirEmpleado(e);
+        if (e.edad>70) then 
+            imprimirEmpleado(e);
     end;
     close(name);
 end;
@@ -125,7 +128,8 @@ begin
     existeEmpleado:=false;
     while (not eof(name)) do begin
         read(name,e);
-        if (e.num=numero) then existeEmpleado:=true;
+        if (e.num=numero) then 
+            existeEmpleado:=true;
     end;
 end;
 
@@ -199,7 +203,8 @@ begin
     reset(name);
     while(not eof(name)) do begin
         read(name,e);
-        if (e.dni='00') then write(texto,'Al empleado número ',e.num,' llamado ',e.nombre,' ',e.apellido, ' con ',e.edad,' años le falta DNI.', #13#10);
+        if (e.dni='00') then 
+            write(texto,'Al empleado número ',e.num,' llamado ',e.nombre,' ',e.apellido, ' con ',e.edad,' años le falta DNI.', #13#10);
     end;
     close(name);
     close(texto);
@@ -218,9 +223,8 @@ begin
 	read(name, aux); // guardo el ultimo registro en aux
 	seek(name, 0);	 //principio
 	read(name, e);	 // busco al empleado
-	while (not eof(name)) and (e.num <> numeroEliminar) do begin // avanzo en el archivo mientras no lo encuentro
+	while (not eof(name)) and (e.num <> numeroEliminar) do // avanzo en el archivo mientras no lo encuentro
 		read(name, e);        
-    end;
     if (e.num=numeroEliminar) then begin //si lo encontre:
         seek(name, filePos(name)-1);	// Me posiciono en la posicion del registro a borrar(una menos de la que estoy parado)
         write(name, aux); // en el registro a borrar, escribo el ultimo registro(aux)

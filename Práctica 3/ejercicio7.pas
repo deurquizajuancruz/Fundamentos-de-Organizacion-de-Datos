@@ -9,10 +9,9 @@ type
         descripcion:string;
         zonaGeografica:string;
     end;
-
     archivo = file of info;
-{
-    ARCHIVO: SE DISPONE
+
+{ARCHIVO: SE DISPONE
 function randomString():string;
 var
     i:integer;
@@ -43,8 +42,7 @@ begin
         leerInfo(ave);    
     end;
     close(name);
-end;
-}
+end;}
 
 procedure imprimirArchivo(var name:archivo);
 var
@@ -71,16 +69,16 @@ begin
         encontrado:=false;
         while (not eof(name) and (not encontrado)) do begin
             read(name,ave);
-            if (ave.codigo=codigoBorrar) then encontrado:=true;
+            if (ave.codigo=codigoBorrar) then 
+                encontrado:=true;
         end;
         if (encontrado) then begin
             ave.codigo:=-1;
             seek(name,filepos(name)-1);
             write(name,ave);
         end
-        else begin
+        else 
             writeln('No se encontro un ave con ese codigo');
-        end;
         writeln('Ingrese el codigo del ave a borrar: ');
         readln(codigoBorrar);
         close(name);
@@ -89,8 +87,10 @@ end;
 
 procedure leer(var name:archivo;var ave:info);
 begin
-    if (not eof(name)) then read(name,ave)
-    else ave.codigo:=valoralto;
+    if (not eof(name)) then 
+        read(name,ave)
+    else 
+        ave.codigo:=valoralto;
 end;
 
 procedure bajaFisica(var name:archivo);

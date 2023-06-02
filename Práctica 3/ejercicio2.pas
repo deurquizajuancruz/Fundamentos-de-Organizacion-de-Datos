@@ -8,16 +8,16 @@ type
         telefono:string;
         dni:string;
     end;
-
     archivo = file of infoArchivo;
 
-function randomString(len:integer):string;
+{function randomString(len:integer):string;
 var
     i:integer;
 begin
     setLength(randomString,len);
-    for i := 1 to len do randomString[i]:=chr(random(26)+97);
-end;
+    for i := 1 to len do 
+        randomString[i]:=chr(random(26)+97);
+end;}
 
 procedure leerAsistente(var a:infoArchivo);
 begin
@@ -56,8 +56,8 @@ var
 begin
     reset(name);
     while (not eof(name)) do begin
-        read(name,a
-        if (a.nombr//e[1]<>'@') then 
+        read(name,a);
+        if (a.nombre[1]<>'@') then 
             writeln('Asistente numero ',a.numero,' llamado ',a.nombre,',',a.apellido,'. Email: ',a.email,' Telefono: ',a.telefono,' DNI: ',a.dni);
     end;
     close(name);
@@ -82,7 +82,7 @@ end;
 var
     arch:archivo;
 begin
-    randomize;
+    //randomize;
     assign(arch,'ArchivoEjercicio2');
     //crearArchivo(arch);
     bajaLogica(arch);

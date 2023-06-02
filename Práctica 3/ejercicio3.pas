@@ -10,7 +10,6 @@ type
         director:string;
         precio:real;
     end;
-
     archivo = file of infoArchivo;
 
 procedure opciones(var opcion:integer;creado:boolean);
@@ -32,13 +31,13 @@ begin
 end;
 
 //1: CREAR ARCHIVO
-function randomString():string;
+{function randomString():string;
 var
     i:integer;
 begin
     setLength(randomString,4);
     for i := 1 to 4 do randomString[i]:=chr(random(26)+97);
-end;
+end;}
 
 procedure leerNovela(var novela:infoArchivo);
 begin
@@ -67,7 +66,12 @@ begin
     readln(nombre);
     assign(name,nombre);
     rewrite(name);
-    novela.codigo:=0; novela.genero:='';novela.nombre:='';novela.duracion:=0;novela.director:='';novela.precio:=0;
+    novela.codigo:=0; 
+    novela.genero:='';
+    novela.nombre:='';
+    novela.duracion:=0;
+    novela.director:='';
+    novela.precio:=0;
     write(name,novela);
     leerNovela(novela);
     while (novela.codigo<>valoralto) do begin
@@ -79,16 +83,16 @@ begin
 end;
 
 //2: DAR DE ALTA 
-
 function existeNovela(var name:archivo;codigoNovela:integer):boolean;
 var
     novela:infoArchivo;
 begin
     reset(name);
     existeNovela:=false;
-    while (not eof(name)) do begin
+    while ((not eof(name)) and (not existeNovela)) do begin
         read(name,novela);
-        if (novela.codigo=codigoNovela) then existeNovela:=true;
+        if (novela.codigo=codigoNovela) then 
+            existeNovela:=true;
     end;
     close(name);
 end;
@@ -116,16 +120,14 @@ begin
         writeln('Novela dada de alta.');
         close(name);
     end
-    else begin
+    else
         writeln('Ya existe una novela con ese codigo.');
-    end;
 end;
 
 //3: MODIFICAR NOVELA
 procedure modificarNovela(var name:archivo);
 var
     codigoNovela,datoModificar:integer;
-    encontrado:boolean;
     novela:infoArchivo;
     nuevoString:string;
     nuevoPrecio:real;
@@ -133,12 +135,7 @@ begin
     reset(name);
     writeln('Ingrese el codigo de novela para modificar: ');
     readln(codigoNovela);
-    encontrado:=false;
-    while (not eof(name)) and (not encontrado) do begin
-        read(name,novela);
-        if (novela.codigo=codigoNovela) then encontrado:=true;
-    end;
-    if (encontrado) then begin
+    if (existeNovela(name,codigoNovela)) then begin
         writeln('Que desea modificar de la novela?El codigo no puede ser modificado.',#13#10,
         '1: Genero.',#13#10,
         '2: Nombre.',#13#10,
@@ -177,9 +174,8 @@ begin
         write(name,novela);
         writeln('La novela con codigo ',codigoNovela,' fue modificada exitosamente.');
     end
-    else begin
+    else
         writeln('No se encontro una novela con ese codigo.');
-    end;
     close(name);
 end;
 
@@ -187,19 +183,13 @@ end;
 procedure eliminarNovela(var name:archivo);
 var
     codigoEliminar:integer;
-    encontrado:boolean;
     novela,cabeceraLista:infoArchivo;
 begin
     reset(name);
     writeln('Ingrese el codigo de la novela a eliminar: ');
     readln(codigoEliminar);
-    encontrado:=false;
     read(name,cabeceraLista); //me guardo la cabecera de la lista
-    while (not eof(name)) and (not encontrado) do begin
-        read(name,novela);
-        if (novela.codigo=codigoEliminar) then encontrado:=true;
-    end;
-    if (encontrado) then begin
+    if (existeNovela(name,codigoEliminar)) then begin
         seek (name,filepos(name)-1); //me posiciono en la posicion a borrar
         write(name,cabeceraLista); //guardo en la posicion a borrar la info de la cabecera
         cabeceraLista.codigo:= (filepos(name)-1) * -1; //paso el indice de la posicion a negativo
@@ -207,9 +197,8 @@ begin
         write(name,cabeceraLista); //el registro cabecera lo reemplazo con el del registro que acabo de eliminar
         writeln('Se elimino la novela correctamente.');
     end
-    else begin
+    else 
         writeln('No se encontro una novela con ese codigo.');
-    end;
     close(name);
 end;
 
@@ -225,7 +214,8 @@ begin
     //read(name,novela);
     while (not eof(name)) do begin
         read(name,novela);
-        if (novela.codigo<1) then write(txt,'Novela eliminada: ',#13#10);
+        if (novela.codigo<1) then 
+            write(txt,'Novela eliminada: ',#13#10);
         write(txt,'Info de novela. Codigo: ',novela.codigo,'. Genero: ',novela.genero,'. Nombre: ',novela.nombre,'. Duracion: ',novela.duracion,'. Director: ',novela.director,'. Precio: ',novela.precio:0:2,#13#10);
     end;
     writeln('Archivo exportado exitosamente.');
