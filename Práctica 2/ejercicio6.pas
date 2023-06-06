@@ -156,9 +156,8 @@ procedure cerrarArchivosDetalles(var vectorDetalles:arrayDetalles);
 var
     i:integer;
 begin
-    for i := 1 to 10 do begin
+    for i := 1 to 10 do
         close(vectorDetalles[i]);
-    end;
 end;
 
 procedure buscarMinimo(var vectorDetalles:arrayDetalles;var vectorRegistros:arrayRegistrosDetalles;var min:infoDetalle);
