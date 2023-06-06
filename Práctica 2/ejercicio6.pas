@@ -169,7 +169,7 @@ begin
     min.cepa:=valoralto;
     for i := 1 to 10 do begin
         if (vectorRegistros[i].localidad<>valoralto) then begin
-            if (vectorRegistros[i].localidad<min.localidad) or (vectorRegistros[i].localidad<=min.localidad) and (vectorRegistros[i].cepa<min.cepa) then begin
+            if (vectorRegistros[i].localidad<min.localidad) or ((vectorRegistros[i].localidad=min.localidad) and (vectorRegistros[i].cepa<min.cepa)) then begin
                 min:=vectorRegistros[i];
                 minPos:=i;
             end;
