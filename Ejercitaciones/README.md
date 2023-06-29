@@ -6,7 +6,7 @@ Preguntas y respuestas que no son sólo códigos.
 
 ---
 
-[Resumen Parcial Práctico](https://www.notion.so/Resumen-Parcial-Pr-ctico-d1e54f8a16f14f1eb31712a554101214?pvs=21)
+[Resumen Parcial Práctico](./Resumen%20Parcial%20Pr%C3%A1ctico/README.md)
 
 ## Práctica 4
 
