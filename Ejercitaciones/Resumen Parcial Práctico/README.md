@@ -1209,23 +1209,23 @@ Cuando se agrega un elemento a un nodo, se debe agregar de forma ordenada, de me
 
 Ejemplo de árbol B, orden 4: 
 
-![Screenshot 2023-06-04 131238.png](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Screenshot_2023-06-04_131238.png)
+![Screenshot 2023-06-04 131238.png](Imágenes/Screenshot_2023-06-04_131238.png)
 
 Nodo inicial del árbol vacío.
 
-![Screenshot 2023-06-04 131257.png](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Screenshot_2023-06-04_131257.png)
+![Screenshot 2023-06-04 131257.png](Imágenes/Screenshot_2023-06-04_131257.png)
 
 Se agrega una clave: se lee el nodo raíz, y si se puede agregar, se genera una operación de escritura en ese nodo.
 
 Operaciones: Lectura 0, Escritura 0.
 
-![Screenshot 2023-06-04 131311.png](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Screenshot_2023-06-04_131311.png)
+![Screenshot 2023-06-04 131311.png](Imágenes/Screenshot_2023-06-04_131311.png)
 
 Se agrega una clave: se lee el nodo raíz, y si se puede agregar, se genera una operación de escritura en ese nodo.
 
 Operaciones: Lectura 0, Escritura 0.
 
-![Screenshot 2023-06-04 131338.png](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Screenshot_2023-06-04_131338.png)
+![Screenshot 2023-06-04 131338.png](Imágenes/Screenshot_2023-06-04_131338.png)
 
 Se agrega una clave: se lee el nodo raíz, y si se puede agregar, se genera una operación de escritura en ese nodo.
 
@@ -1243,29 +1243,29 @@ Primera mitad: 25 y 40 se quedan en el Nodo 0.
 
 Segunda mitad: 67 se promociona al nodo padre ya que es la clave menor (se crea un nuevo nodo raíz). 96 se traslada a un nuevo nodo derecho.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled.png)
+![Untitled](Imágenes/Untitled.png)
 
 Operaciones: Lectura del Nodo 0, Escritura del Nodo 0, Escritura del Nodo 1, Escritura del Nodo 2.
 
 Se debe llevar un sólo algoritmo para escribir todas las operaciones de escritrura que se realizan: preorden, inorden o postorden. En este caso, es postorden: primero el hijo izquierdo (Nodo 0), luego el hijo derecho (Nodo 1) y por último la raíz (Nodo 2).
 
-![Screenshot 2023-06-04 145723.png](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Screenshot_2023-06-04_145723.png)
+![Screenshot 2023-06-04 145723.png](Imágenes/Screenshot_2023-06-04_145723.png)
 
 Se agrega la clave 88. 
 
 Operaciones: L2, L1, E1.
 
-![Screenshot 2023-06-04 145733.png](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Screenshot_2023-06-04_145733.png)
+![Screenshot 2023-06-04 145733.png](Imágenes/Screenshot_2023-06-04_145733.png)
 
 Se agrega el 105.
 
 Operaciones: L2, L1, E1.
 
-![Screenshot 2023-06-04 145747.png](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Screenshot_2023-06-04_145747.png)
+![Screenshot 2023-06-04 145747.png](Imágenes/Screenshot_2023-06-04_145747.png)
 
 Se quiere agregar el 75: se produce overflow, 75 y 88 se quedan en el Nodo 1, 96 se promociona al nodo padre y 105 se traslada a un nuevo nodo.
 
-![Screenshot 2023-06-04 145756.png](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Screenshot_2023-06-04_145756.png)
+![Screenshot 2023-06-04 145756.png](Imágenes/Screenshot_2023-06-04_145756.png)
 
 Operaciones: L2, L1, E1, E3, E2.
 
@@ -1290,13 +1290,13 @@ Hay distintas políticas para la resolución de underflow. Si el nodo es extremo
 
 Supongamos este árbol:
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%201.png)
+![Untitled](Imágenes/Untitled%201.png)
 
 Se quiere eliminar el 75: se elimina sin problemas ya que al hacerlo, el Nodo 1 no se queda en underflow porque tiene la cantidad mínima de claves. Las operaciones fueron: L7, L2, L1, E1.
 
 Se quiere eliminar el 88: como no está en un nodo hoja, se reemplaza por la clave menor del subárbol derecho, que en este caso es el 91.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%202.png)
+![Untitled](Imágenes/Untitled%202.png)
 
 Las operaciones fueron: L7, L6, L4, E4, E7.
 
@@ -1310,7 +1310,7 @@ Primera mitad: 25 y 40 se quedan en el Nodo 0.
 
 Segunda mitad: 55 se promociona al nodo padre porque es la menor de las claves, 67 se traslada al nodo derecho.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%203.png)
+![Untitled](Imágenes/Untitled%203.png)
 
 Operaciones: L7, L2, L1, L0, E0, E1, E2.
 
@@ -1320,7 +1320,7 @@ Se elimina el 86: es un nodo extremo (sólo tiene un hermano, el Nodo 1), se tra
 
 En la fusión de nodos, el nodo derecho queda liberado, y el nodo de la izquierda pasa a tener todas las claves. Una clave del nodo padre de los nodos fusionados debe “bajar”, para que se cumpla que si un nodo tiene X descendientes, debe tener X - 1 claves. La clave 80 baja al Nodo 1.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%204.png)
+![Untitled](Imágenes/Untitled%204.png)
 
 Operaciones: L7, L2, L5, L1, E1, E2.
 
@@ -1330,7 +1330,7 @@ Se elimina el 95: se trata de redistribuir con su único hermano, no es posible 
 
 Ahora, el Nodo 6 queda en underflow: se trata de redistribuir con su hermano adyacente (Nodo 2), no es posible porque tiene la mínima cantidad de claves, por lo que se fusionan: El 91 baja al Nodo 2, y se libera el Nodo 6. Se decrementa la altura del árbol.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%205.png)
+![Untitled](Imágenes/Untitled%205.png)
 
 ## Árboles B+
 
@@ -1354,31 +1354,31 @@ Si al eliminar una clave, la cantidad de claves es menor que [ M / 2 ] - 1, ento
 
 Ejemplo de árbol B+, orden 4:
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%206.png)
+![Untitled](Imágenes/Untitled%206.png)
 
 Se agrega el 50 al Nodo 0. Operaciones: E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%207.png)
+![Untitled](Imágenes/Untitled%207.png)
 
 Se agrega el 75 al Nodo 0. Operaciones: L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%208.png)
+![Untitled](Imágenes/Untitled%208.png)
 
 Se agrega el 23 al Nodo 0. Operaciones: L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%209.png)
+![Untitled](Imágenes/Untitled%209.png)
 
 Se agrega el 8, hay overflow: la primera mitad (8,23), se quedan en el Nodo 0, la segunda mitad (50, 75) se traslada a un nuevo nodo derecho, y una copia del menor de esta segunda mitad se promociona al nodo padre. Se incrementa la altura del árbol. Operaciones: L0, E0, E1, E2.
 
 Supongamos este árbol B+:
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2010.png)
+![Untitled](Imágenes/Untitled%2010.png)
 
 Se quiere agregar la clave 100: se genera overflow en el Nodo 4. La primera mitad (88,90) se quedan en el Nodo 4, la segunda mitad (100,121) se trasladan a un nuevo nodo derecho, y una copia de la menor de la segunda mitad (100) se promociona al nodo padre.
 
 Ahora, hay overflow en el Nodo 2. Como no es un nodo hoja, la primera mitad (15 y 50) se quedan en el Nodo 2, el menor de la segunda mitad (88) se promociona al nodo padre, y la segunda mitad (100) se traslada a un nuevo nodo derecho. Se incrementa la altura del árbol. Árbol resultante: 
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2011.png)
+![Untitled](Imágenes/Untitled%2011.png)
 
 Operaciones: L2, L4, E4, E5, E2, E6, E7.
 
@@ -1388,7 +1388,7 @@ Se elimina el 100. Operaciones: L7, L6, L5, E5.
 
 Se elimina el 121, hay underflow. Se trata de redistribuir con su hermano adyacente y es posible porque no tiene la cantidad mínima de claves. La primera mitad (88) se queda en el Nodo 4, la segunda mitad (90) se traslada al nodo derecho, y una copia de la menor de las claves se promociona al nodo padre. Árbol resultante:
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2012.png)
+![Untitled](Imágenes/Untitled%2012.png)
 
 Operaciones: L7, L6, L5, L4, E4, E5, E6.
 
@@ -1396,7 +1396,7 @@ Se elimina el 88: se trata de redistirbuir con su hermano adyacente (Nodo 5), no
 
 El Nodo 6 ahora se encuentra en underflow: se trata de redistribuir con su hermano adyacente (Nodo 2) y es posible. La primer mitad (15) queda en el Nodo 2, la segunda se traslada al nodo derecho (88), y la menor de la segunda mitad (50) se promociona al nodo padre. Como la clave del nodo raíz cambió, los subárboles también. Árbol resultante:
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2013.png)
+![Untitled](Imágenes/Untitled%2013.png)
 
 Operaciones: L7, L6, L4, L5, E4, L2, E2, E6, E7.
 
@@ -1406,7 +1406,7 @@ Se elimina el 50: se trata de redistribuir con el Nodo 4, no se posible porque s
 
 El Nodo 6 queda en underflow. Se trata de redistribuir con su hermano adyacente (Nodo 2), pero no se puede porque sólo tiene una clave, por lo que se fusionan en el Nodo 2. Se libera el Nodo 6. La clave del Nodo 7 “baja”. Se libera el Nodo 7.  Se decrementa la altura del árbol. Árbol resultante:
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2014.png)
+![Untitled](Imágenes/Untitled%2014.png)
 
 Operaciones: L7, L6, L1, L4, E1, L2, E2.
 
@@ -1414,7 +1414,7 @@ Ejercicio 10 de la Práctica 4: Dada las siguientes operaciones, mostrar la cons
 
 Mínimo de claves por nodo: 4/2 - 1 = 1.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2015.png)
+![Untitled](Imágenes/Untitled%2015.png)
 
 ### +50:
 
@@ -1422,7 +1422,7 @@ Se agrega la clave 50 al Nodo 0.
 
 Operaciones: E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2016.png)
+![Untitled](Imágenes/Untitled%2016.png)
 
 ### +70:
 
@@ -1430,7 +1430,7 @@ Se agrega la clave 70 al Nodo 0.
 
 Operaciones: L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2017.png)
+![Untitled](Imágenes/Untitled%2017.png)
 
 ### +40:
 
@@ -1438,7 +1438,7 @@ Se agrega la clave 40 al Nodo 0.
 
 Operaciones: L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2018.png)
+![Untitled](Imágenes/Untitled%2018.png)
 
 ### +15:
 
@@ -1446,7 +1446,7 @@ Se agrega la clave 15 al Nodo 0, hay overflow: 15 y 40 se quedan en el Nodo 0, s
 
 Operaciones: L0, E0, E1, E2.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2019.png)
+![Untitled](Imágenes/Untitled%2019.png)
 
 ### +90:
 
@@ -1454,7 +1454,7 @@ Se agrega la clave 90 al Nodo 1.
 
 Operaciones: L2, L1, E1.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2020.png)
+![Untitled](Imágenes/Untitled%2020.png)
 
 ### +120:
 
@@ -1462,7 +1462,7 @@ Se agrega la clave 120 al Nodo 1.
 
 Operaciones: L2, L1, E1.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2021.png)
+![Untitled](Imágenes/Untitled%2021.png)
 
 ### +115:
 
@@ -1470,7 +1470,7 @@ Se agrega la clave 115 al Nodo 1, hay overflow: 70 y 90 se quedan en el Nodo 1, 
 
 Operaciones: L2, L1, E1, E3, E2.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2022.png)
+![Untitled](Imágenes/Untitled%2022.png)
 
 ### +45:
 
@@ -1478,7 +1478,7 @@ Se agrega la clave 45 al Nodo 0.
 
 Operaciones: L2, L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2023.png)
+![Untitled](Imágenes/Untitled%2023.png)
 
 ### +30:
 
@@ -1486,7 +1486,7 @@ Se agrega la clave 30 al Nodo 0, hay overflow, el 15 y el 30 se quedan en el Nod
 
 Operaciones: L2, L0, E0, E4, E2.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2024.png)
+![Untitled](Imágenes/Untitled%2024.png)
 
 ### +100:
 
@@ -1494,7 +1494,7 @@ Se agrega la clave 100 al Nodo 1.
 
 Operaciones: L2, L1, E1.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2025.png)
+![Untitled](Imágenes/Untitled%2025.png)
 
 Operaciones: L2, L1, E1, E5, E2, E6, E7.
 
@@ -1504,7 +1504,7 @@ Se agrega la clave al Nodo 1, hay overflow, 70 y 90 se quedan en el Nodo 1, 100 
 
 Se agrega el 100 al Nodo 2, hay overflow, 40 y 50 se quedan en el Nodo 2, 155 se traslada a un nuevo nodo y 100 se promociona a un nuevo nodo padre. Se aumenta la altura del árbol.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2026.png)
+![Untitled](Imágenes/Untitled%2026.png)
 
 ### +77:
 
@@ -1512,7 +1512,7 @@ Se agrega la clave al Nodo 1.
 
 Operaciones: L7, L2, L1, E1.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2027.png)
+![Untitled](Imágenes/Untitled%2027.png)
 
 Operaciones: L7, L2, L4, L0, E4, E0.
 
@@ -1520,7 +1520,7 @@ Operaciones: L7, L2, L4, L0, E4, E0.
 
 Se elimina la clave del Nodo 4, hay underflow, se redistribuye con el hermano izquierdo y se balancea la carga.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2028.png)
+![Untitled](Imágenes/Untitled%2028.png)
 
 Operaciones: L7, L2, L4, L0, L1, E4, E1, E2.
 
@@ -1528,7 +1528,7 @@ Operaciones: L7, L2, L4, L0, L1, E4, E1, E2.
 
 Se elimina el 40 del Nodo 4, hay underflow, se trata de redistribuir con el hermano izquierdo, no se puede ya que tiene la cantidad mínima de nodos, se redistribuye con el hermano derecho.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2029.png)
+![Untitled](Imágenes/Untitled%2029.png)
 
 ### -50:
 
@@ -1536,7 +1536,7 @@ Se elimina el 50 del Nodo 4.
 
 Operaciones: L7, L2, L4, E4.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2030.png)
+![Untitled](Imágenes/Untitled%2030.png)
 
 Operaciones: L7, L2, L1, L4, E4, E2.
 
@@ -1544,7 +1544,7 @@ Operaciones: L7, L2, L1, L4, E4, E2.
 
 Se elimina el 90 del Nodo 1, hay underflow, se trata de redistribuir con el hermano adyacente ya que es un nodo extremo, no se puede ya que tiene la cantidad mínima de nodos, así que se fusiona con éste. La clave padre baja. Se libera el Nodo 1.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2031.png)
+![Untitled](Imágenes/Untitled%2031.png)
 
 Operaciones: L7, L6, L5, L3, E5, L2, E2.
 
@@ -1560,7 +1560,7 @@ Ejercicio 17 de la Práctica 4: Dada las siguientes operaciones, mostrar la cons
 
 Cantidad mínima de claves por nodo: 6 / 2 -1 = 2.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2032.png)
+![Untitled](Imágenes/Untitled%2032.png)
 
 ### +52:
 
@@ -1568,7 +1568,7 @@ Se agrega el 52 al Nodo 0.
 
 Operaciones: E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2033.png)
+![Untitled](Imágenes/Untitled%2033.png)
 
 ### +23:
 
@@ -1576,7 +1576,7 @@ Se agrega el 23 al Nodo 0.
 
 Operaciones: L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2034.png)
+![Untitled](Imágenes/Untitled%2034.png)
 
 ### +10:
 
@@ -1584,7 +1584,7 @@ Se agrega el 10 al Nodo 0.
 
 Operaciones: L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2035.png)
+![Untitled](Imágenes/Untitled%2035.png)
 
 ### +99:
 
@@ -1592,7 +1592,7 @@ Se agrega el 99 al Nodo 0.
 
 Operaciones: L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2036.png)
+![Untitled](Imágenes/Untitled%2036.png)
 
 ### +63:
 
@@ -1600,7 +1600,7 @@ Se agrega el 63 al Nodo 0.
 
 Operaciones: L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2037.png)
+![Untitled](Imágenes/Untitled%2037.png)
 
 Operaciones: L0, E0, E1, E2.
 
@@ -1608,7 +1608,7 @@ Operaciones: L0, E0, E1, E2.
 
 Se agrega el 74 al Nodo 0, hay underflow: 10, 23 y 52 se quedan en el Nodo 0, una copia de 63 se promociona al nodo padre (nuevo nodo raíz) y 63, 74 y 99 se mueven al Nodo 1. Se incrementa la altura del árbol.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2038.png)
+![Untitled](Imágenes/Untitled%2038.png)
 
 ### +19:
 
@@ -1616,7 +1616,7 @@ Se agrega el 19 al Nodo 0.
 
 Operaciones: L2, L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2039.png)
+![Untitled](Imágenes/Untitled%2039.png)
 
 ### +85:
 
@@ -1624,7 +1624,7 @@ Se agrega el 85 al Nodo 1.
 
 Operaciones: L0, L1, E1.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2040.png)
+![Untitled](Imágenes/Untitled%2040.png)
 
 ### +14:
 
@@ -1632,7 +1632,7 @@ Se agrega el 14 al Nodo 0.
 
 Operaciones: L2, L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2041.png)
+![Untitled](Imágenes/Untitled%2041.png)
 
 ### +73:
 
@@ -1640,7 +1640,7 @@ Se agrega el 73 al Nodo 1.
 
 Operaciones: L2, L1, E1,
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2042.png)
+![Untitled](Imágenes/Untitled%2042.png)
 
 Operaciones: L2, L0, E0, E3, E2.
 
@@ -1648,7 +1648,7 @@ Operaciones: L2, L0, E0, E3, E2.
 
 Se agrega el 5 al Nodo 0, hay overflow: 5, 10 y 14 se quedan en el Nodo 0, 19, 23 y 52 se trasladan a un nuevo nodo, y una copia de 19 se promociona al nodo padre.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2043.png)
+![Untitled](Imágenes/Untitled%2043.png)
 
 ### +7:
 
@@ -1656,7 +1656,7 @@ Se agrega el 7 al Nodo 0.
 
 Operaciones: L2, L0, E0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2044.png)
+![Untitled](Imágenes/Untitled%2044.png)
 
 ### +41:
 
@@ -1664,7 +1664,7 @@ Se agrega el 41 al Nodo 3.
 
 Operaciones: L2, L3, E3.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2045.png)
+![Untitled](Imágenes/Untitled%2045.png)
 
 Operaciones: L2, L1, E1, E4, E2.
 
@@ -1672,7 +1672,7 @@ Operaciones: L2, L1, E1, E4, E2.
 
 Se agrega el 100 al Nodo 1, hay overflow: 63, 73 y 74 se quedan en el Nodo 1, 85, 99 y 100 se trasladan a un nuevo nodo, una copia de 85 se promociona al nodo padre.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2046.png)
+![Untitled](Imágenes/Untitled%2046.png)
 
 ### +130:
 
@@ -1680,7 +1680,7 @@ Se agrega el 130 al Nodo 4.
 
 Operaciones: L2, L4, E4.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2047.png)
+![Untitled](Imágenes/Untitled%2047.png)
 
 Operaciones: L2, L3. E3.
 
@@ -1688,7 +1688,7 @@ Operaciones: L2, L3. E3.
 
 Se agrega el 44 al Nodo 3.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2048.png)
+![Untitled](Imágenes/Untitled%2048.png)
 
 ### -63:
 
@@ -1696,7 +1696,7 @@ Se elimina el 63 del Nodo 1.
 
 Operaciones: L2, L1, E1.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2049.png)
+![Untitled](Imágenes/Untitled%2049.png)
 
 Operaciones: L2, L1, L3, E3, E1, E2.
 
@@ -1704,7 +1704,7 @@ Operaciones: L2, L1, L3, E3, E1, E2.
 
 Se elimina el 73 del Nodo 1, hay underflow: se redistribuye con su hermano izquierdo. Se juntan las cargas del Nodo 3 y del Nodo 1, la primera mitad se queda en el Nodo 3, la segunda mitad en el Nodo 1, y una copia de la clave menor de la segunda mitad se promociona al nodo padre.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2050.png)
+![Untitled](Imágenes/Untitled%2050.png)
 
 Operaciones: L2, L0, E0.
 
@@ -1712,7 +1712,7 @@ Operaciones: L2, L0, E0.
 
 Se agrega el 15 al Nodo 0.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2051.png)
+![Untitled](Imágenes/Untitled%2051.png)
 
 Operaciones: L2, L0, E0, E5, E2.
 
@@ -1720,7 +1720,7 @@ Operaciones: L2, L0, E0, E5, E2.
 
 Se agrega el 16 al Nodo 0, hay overflow: 5, 7, y10 se quedan en el Nodo 0, 14, 15 y 16 se trasladan a un nuevo nodo, una copia de 14 se promociona al nodo padre.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2052.png)
+![Untitled](Imágenes/Untitled%2052.png)
 
 Operaciones: L2, L1, E1.
 
@@ -1728,7 +1728,7 @@ Operaciones: L2, L1, E1.
 
 Se elimina el 74 del Nodo 1.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2053.png)
+![Untitled](Imágenes/Untitled%2053.png)
 
 Operaciones: L2, L1, L3, E3, E1, E2.
 
@@ -2075,11 +2075,11 @@ En la dispersión dinámica, las direcciones donde se van a ir guardando los reg
 
 En el estado inicial del archivo, hay una tabla en memoria y direcciones en disco que son referenciadas por las entradas de la tabla de memoria. Tanto la tabla en memoria como las direcciones en disco tienen un valor asociado que indica la cantidad de bits necesarios para acceder a esa dirección.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2054.png)
+![Untitled](Imágenes/Untitled%2054.png)
 
 Se van agregando claves a la dirección en disco. Cuando no se pueden agregar más claves, se produce overflow: se incrementa en uno el valor asociado a la dirección en overflow y se genera una nueva dirección con ese mismo valor. Como ahora hay 2 direcciones en disco y 1 dirección en la tabla en memoria, la tabla no dispone de entradas suficientes para direccionar a las nuevas direcciones y hace falta generar más direcciones. La cantidad de celdas de la tabla se duplica y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2055.png)
+![Untitled](Imágenes/Untitled%2055.png)
 
 Las claves son secuencias de bits. Se deben tomar la cantidad de bits que indique el valor asociado a la tabla en memoria (en este caso 1) de derecha a izquierda de esas cadenas, y ver cuál entrada en la tabla de memoria apunta a ese bit.
 
@@ -2091,21 +2091,21 @@ Se incrementa en uno el valor asociado a la dirección en overflow y se genera u
 
 Ahora, deben redispersarse solamente las claves de las direcciones involucradas: Beta, Gamma y Epsilon, agarrando la cantidad de bits que indique el valor asociado en la tabla en memoria de derecha a izquierda. Los últimos 2 bits de Beta son 00, los últimos 2 bits de Epsilon son 00, los últimos 2 bits de Gamma son 10.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2056.png)
+![Untitled](Imágenes/Untitled%2056.png)
 
 La dirección 00 apunta a la dirección que contiene Beta y Epsilon debido a que ambas terminan en 00. La dirección 10 apunta a la dirección que contiene Gamma debido a que termina en 10. Las direcciones 01 y 11 apuntan a la dirección que contiene Alfa y Delta porque se agarra la cantidad de bits que indique el valor asociado a esa dirección (en este caso 1) de derecha a izquierda y ambas forman 1, que es como terminan Alfa y Delta.
 
 Se inserta Rho, que su cadena es 00…1011. Debe insertarse en la dirección 11 pero está llena, por lo que se produce overflow. Se incrementa en uno el valor asociado a esa dirección y se genera una nueva con el mismo valor. Se redispersan las claves involucradas: Alfa termina en 01, Delta y Rho terminan en 11, por lo que la tabla ahora queda:
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2057.png)
+![Untitled](Imágenes/Untitled%2057.png)
 
 No hizo falta duplicar la cantidad de entradas en tabla en memoria porque posee direcciones suficientes para referenciar a esta nueva dirección generada.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2058.png)
+![Untitled](Imágenes/Untitled%2058.png)
 
 Se quiere insertar la clave PSI, la cual su clave es 00…0001. Debe agregarse en la dirección 01, la cual ya está llena, por lo que hay overflow. Se incrementa en uno el valor asociado a esa dirección, se genera una nueva dirección con ese mismo valor, y como la tabla no posee suficientes entradas en memoria se duplica la cantidad de entradas. Se redispersan las claves involucradas.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2059.png)
+![Untitled](Imágenes/Untitled%2059.png)
 
 Las entradas 000 y 100 apuntan a la dirección que contiene Beta y Epsilon porque, tomando sus 2 últimos bits, se puede formar el patrón 00, que es el mismo patrón que tienen los 2 últimos bits de las claves de Beta y Epsilon.
 
@@ -2758,17 +2758,17 @@ para cada operación. Justifique brevemente ante colisión y desborde los pasos 
 | 3 | Sbaraglia | 10100101 | 4 | De la Serna | 01010111 |
 | 5 | Altavista | 01101011 | 6 | Grandinetti | 10101010 |
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2060.png)
+![Untitled](Imágenes/Untitled%2060.png)
 
 ### Darín:
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2061.png)
+![Untitled](Imágenes/Untitled%2061.png)
 
 ### Alterio:
 
 Hay colisión sin overflow. Se agrega a la dirección.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2062.png)
+![Untitled](Imágenes/Untitled%2062.png)
 
 ### Sbaraglia:
 
@@ -2776,7 +2776,7 @@ Hay colisión con overflow. Se incrementa en uno el valor asociado a la direcci�
 
 La tabla no dispone de entradas suficientes para direccionar la nueva dirección. Se duplica la cantidad de celdas de la tabla y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2063.png)
+![Untitled](Imágenes/Untitled%2063.png)
 
 ### De la Serna:
 
@@ -2784,7 +2784,7 @@ Hay colisión con overflow. Se incrementa en uno el valor asociado a la direcci�
 
 La tabla no dispone de entradas suficientes para direccionar la nueva dirección. Se duplica la cantidad de celdas de la tabla y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2064.png)
+![Untitled](Imágenes/Untitled%2064.png)
 
 ### Altavista:
 
@@ -2792,7 +2792,7 @@ Hay colisión con overflow. Se incrementa en uno el valor asociado a la direcci�
 
 La tabla no dispone de entradas suficientes para direccionar la nueva dirección. Se duplica la cantidad de celdas de la tabla y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
 
-![Untitled](Resumen%20Parcial%20Pra%CC%81ctico%20d1e54f8a16f14f1eb31712a554101214/Untitled%2065.png)
+![Untitled](Imágenes/Untitled%2065.png)
 
 ### Grandinetti:
 

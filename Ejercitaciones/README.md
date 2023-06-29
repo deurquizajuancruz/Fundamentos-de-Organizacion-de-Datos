@@ -130,7 +130,7 @@ cada operación indicando lecturas y escrituras en orden de ocurrencia. Para la
 resolución de underflow debe utilizar política a izquierda. Graficar cada operación por
 separado.
     
-    ![Screenshot 2023-05-10 165839.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-10_165839.png)
+    ![Screenshot 2023-05-10 165839.png](Imágenes/Screenshot_2023-05-10_165839.png)
     
     ### +320:
     
@@ -140,7 +140,7 @@ separado.
     
     Operaciones: Lectura en Nodo 1, Escritura en Nodo 1, Lectura en Nodo 2, Escritura en Nodo 2, Escritura en Nodo 6, Escritura en Nodo 7, Escritura en Nodo 8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled.png)
+    ![Untitled](Imágenes/Untitled.png)
     
     ### -390:
     
@@ -148,7 +148,7 @@ separado.
     
     Operaciones: Lectura Nodo 8, Lectura Nodo 7, Lectura Nodo 4, Escritura Nodo 8, Escritura Nodo 4.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%201.png)
+    ![Untitled](Imágenes/Untitled%201.png)
     
     ### -400:
     
@@ -156,7 +156,7 @@ separado.
     
     Operaciones: L8, L7, L4, L5, E4, E5, E7, E8.
     
-    ![Screenshot 2023-05-10 191602.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-10_191602.png)
+    ![Screenshot 2023-05-10 191602.png](Imágenes/Screenshot_2023-05-10_191602.png)
     
     ### -533:
     
@@ -164,12 +164,12 @@ separado.
     
     Operaciones: L8, L7, L5, L4, E5, E4, E7
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%202.png)
+    ![Untitled](Imágenes/Untitled%202.png)
     
 - **6:** Dado el siguiente árbol B de orden 4, mostrar cómo quedaría el mismo luego de realizar
 las siguientes operaciones: +5, +9, +80, +51, -50, -92. Política de resolución de underflows: derecha.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%203.png)
+    ![Untitled](Imágenes/Untitled%203.png)
     
     ### +5:
     
@@ -177,7 +177,7 @@ las siguientes operaciones: +5, +9, +80, +51, -50, -92. Política de resolución
     
     Operaciones: L2,L0,E0,E3,E2
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%204.png)
+    ![Untitled](Imágenes/Untitled%204.png)
     
     ### +9:
     
@@ -185,7 +185,7 @@ las siguientes operaciones: +5, +9, +80, +51, -50, -92. Política de resolución
     
     Operaciones: L2,L0,E0
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%205.png)
+    ![Untitled](Imágenes/Untitled%205.png)
     
     ### +80:
     
@@ -193,7 +193,7 @@ las siguientes operaciones: +5, +9, +80, +51, -50, -92. Política de resolución
     
     Operaciones: L2, L1, E1,E4,E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%206.png)
+    ![Untitled](Imágenes/Untitled%206.png)
     
     ### +51:
     
@@ -201,7 +201,7 @@ las siguientes operaciones: +5, +9, +80, +51, -50, -92. Política de resolución
     
     Operaciones: L2,L3,E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%207.png)
+    ![Untitled](Imágenes/Untitled%207.png)
     
     ### -50:
     
@@ -209,7 +209,7 @@ las siguientes operaciones: +5, +9, +80, +51, -50, -92. Política de resolución
     
     Operaciones: L2,L3,E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%208.png)
+    ![Untitled](Imágenes/Untitled%208.png)
     
     ### -92:
     
@@ -217,12 +217,12 @@ las siguientes operaciones: +5, +9, +80, +51, -50, -92. Política de resolución
     
     Operaciones: L2,L4,L1,E1,E4,E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%209.png)
+    ![Untitled](Imágenes/Untitled%209.png)
     
 - **7:** Dado el siguiente árbol B de orden 6, mostrar como quedaría el mismo luego de realizar
 las siguientes operaciones: +15, +71, +3, +48, -56, -71. Política de resolución de underflows: derecha o izquierda.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2010.png)
+    ![Untitled](Imágenes/Untitled%2010.png)
     
     ### +15:
     
@@ -230,7 +230,7 @@ las siguientes operaciones: +15, +71, +3, +48, -56, -71. Política de resolució
     
     Operaciones: L0, E0, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2011.png)
+    ![Untitled](Imágenes/Untitled%2011.png)
     
     ### +71:
     
@@ -238,7 +238,7 @@ las siguientes operaciones: +15, +71, +3, +48, -56, -71. Política de resolució
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2012.png)
+    ![Untitled](Imágenes/Untitled%2012.png)
     
     ### +3:
     
@@ -246,7 +246,7 @@ las siguientes operaciones: +15, +71, +3, +48, -56, -71. Política de resolució
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2013.png)
+    ![Untitled](Imágenes/Untitled%2013.png)
     
     ### +48:
     
@@ -254,7 +254,7 @@ las siguientes operaciones: +15, +71, +3, +48, -56, -71. Política de resolució
     
     Operaciones: L2, L0, E0, E3, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2014.png)
+    ![Untitled](Imágenes/Untitled%2014.png)
     
     ### -56:
     
@@ -262,7 +262,7 @@ las siguientes operaciones: +15, +71, +3, +48, -56, -71. Política de resolució
     
     Operaciones: L2, L3, L1, L0, E0, E3, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2015.png)
+    ![Untitled](Imágenes/Untitled%2015.png)
     
     ### -71:
     
@@ -270,14 +270,14 @@ las siguientes operaciones: +15, +71, +3, +48, -56, -71. Política de resolució
     
     Operaciones: L2, L3, L1, L0, E3, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2016.png)
+    ![Untitled](Imágenes/Untitled%2016.png)
     
 - **8:** Dado el siguiente árbol B de orden 5, mostrar como quedaría el mismo luego de realizar
 las siguientes operaciones: +450, -485, -511, -614. Política de resolución de underflows: derecha.
     
     Mínimo de claves por nodo: 5/2 - 1 = 1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2017.png)
+    ![Untitled](Imágenes/Untitled%2017.png)
     
     ### +450:
     
@@ -287,7 +287,7 @@ las siguientes operaciones: +450, -485, -511, -614. Política de resolución de 
     
     Operaciones: L2, L1, E1, E6, E2, E7, E8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2018.png)
+    ![Untitled](Imágenes/Untitled%2018.png)
     
     ### -485:
     
@@ -295,7 +295,7 @@ las siguientes operaciones: +450, -485, -511, -614. Política de resolución de 
     
     Operaciones: L8, L7, L4, E4, E8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2019.png)
+    ![Untitled](Imágenes/Untitled%2019.png)
     
     ### -511:
     
@@ -303,7 +303,7 @@ las siguientes operaciones: +450, -485, -511, -614. Política de resolución de 
     
     Operaciones: L8, L7, L4, L5, E4, E5, E7.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2020.png)
+    ![Untitled](Imágenes/Untitled%2020.png)
     
     ### -614:
     
@@ -311,14 +311,14 @@ las siguientes operaciones: +450, -485, -511, -614. Política de resolución de 
     
     Operaciones: L8, L7, L5, L3, E5, E3, E7.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2021.png)
+    ![Untitled](Imágenes/Untitled%2021.png)
     
 - **9:** Dado un árbol B de orden 5  y con política izquierda, para cada operación dada dibuje el árbol resultante, explique las decisiones tomadas, escriba las lecturas y escrituras.
 Operaciones: -76, -400, +900, +12.
     
     Mínimo de claves por nodo: 5 / 2 - 1 = 1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2022.png)
+    ![Untitled](Imágenes/Untitled%2022.png)
     
     ### -76:
     
@@ -326,7 +326,7 @@ Operaciones: -76, -400, +900, +12.
     
     Operaciones: L2, L4, E4, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2023.png)
+    ![Untitled](Imágenes/Untitled%2023.png)
     
     ### -400:
     
@@ -334,7 +334,7 @@ Operaciones: -76, -400, +900, +12.
     
     Operaciones: L2, L1, L4, E1, E4, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2024.png)
+    ![Untitled](Imágenes/Untitled%2024.png)
     
     ### +900:
     
@@ -342,7 +342,7 @@ Operaciones: -76, -400, +900, +12.
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2025.png)
+    ![Untitled](Imágenes/Untitled%2025.png)
     
     ### +12:
     
@@ -350,7 +350,7 @@ Operaciones: -76, -400, +900, +12.
     
     Operaciones: L2, L0, E0, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2026.png)
+    ![Untitled](Imágenes/Untitled%2026.png)
     
 - **10:** Dada las siguientes operaciones, mostrar la construcción paso a paso de un árbol B de
 orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -40, -50, -90, -100. Política de resolución de underflows: izquierda o derecha.
@@ -363,7 +363,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2027.png)
+    ![Untitled](Imágenes/Untitled%2027.png)
     
     ### +70:
     
@@ -371,7 +371,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2028.png)
+    ![Untitled](Imágenes/Untitled%2028.png)
     
     ### +40:
     
@@ -379,7 +379,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2029.png)
+    ![Untitled](Imágenes/Untitled%2029.png)
     
     ### +15:
     
@@ -387,7 +387,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L0, E0, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2030.png)
+    ![Untitled](Imágenes/Untitled%2030.png)
     
     ### +90:
     
@@ -395,7 +395,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2031.png)
+    ![Untitled](Imágenes/Untitled%2031.png)
     
     ### +120:
     
@@ -403,7 +403,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2032.png)
+    ![Untitled](Imágenes/Untitled%2032.png)
     
     ### +115:
     
@@ -411,7 +411,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L2, L1, E1, E3, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2033.png)
+    ![Untitled](Imágenes/Untitled%2033.png)
     
     ### +45:
     
@@ -419,7 +419,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2034.png)
+    ![Untitled](Imágenes/Untitled%2034.png)
     
     ### +30:
     
@@ -427,7 +427,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L2, L0, E0, E4, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2035.png)
+    ![Untitled](Imágenes/Untitled%2035.png)
     
     ### +100:
     
@@ -435,7 +435,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2036.png)
+    ![Untitled](Imágenes/Untitled%2036.png)
     
     ### +112:
     
@@ -445,7 +445,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L2, L1, E1, E5, E2, E6, E7.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2037.png)
+    ![Untitled](Imágenes/Untitled%2037.png)
     
     ### +77:
     
@@ -453,7 +453,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L7, L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2038.png)
+    ![Untitled](Imágenes/Untitled%2038.png)
     
     ### -45:
     
@@ -461,7 +461,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L7, L2, L4, L0, E4, E0.
     
-    ![Screenshot 2023-05-11 224228.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-11_224228.png)
+    ![Screenshot 2023-05-11 224228.png](Imágenes/Screenshot_2023-05-11_224228.png)
     
     ### -40:
     
@@ -469,7 +469,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L7, L2, L4, L0, L1, E4, E1, E2.
     
-    ![Screenshot 2023-05-16 183936.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-16_183936.png)
+    ![Screenshot 2023-05-16 183936.png](Imágenes/Screenshot_2023-05-16_183936.png)
     
     ### -50:
     
@@ -477,7 +477,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L7, L2, L4, E4.
     
-    ![Screenshot 2023-05-16 184023.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-16_184023.png)
+    ![Screenshot 2023-05-16 184023.png](Imágenes/Screenshot_2023-05-16_184023.png)
     
     ### -90:
     
@@ -485,7 +485,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L7, L2, L1, L4, E4, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2039.png)
+    ![Untitled](Imágenes/Untitled%2039.png)
     
     ### -100:
     
@@ -497,7 +497,7 @@ orden 4: +50 , +70, +40, +15, +90, +120, +115, +45, +30, +100, +112, +77, -45, -
     
     Operaciones: L7, L6, L5, L3, E5, L2, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2040.png)
+    ![Untitled](Imágenes/Untitled%2040.png)
     
 - **11:** Dadas las siguientes operaciones, mostrar la construcción paso a paso de un árbol B de
 orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120, +23, +52, +59, +65, +30, +40, +45, +31, +34, +38, +60, +63, +64, -23, -30, -31, -40, -45, -38.
@@ -510,7 +510,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2041.png)
+    ![Untitled](Imágenes/Untitled%2041.png)
     
     ### +50:
     
@@ -518,7 +518,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2042.png)
+    ![Untitled](Imágenes/Untitled%2042.png)
     
     ### +70:
     
@@ -526,7 +526,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2043.png)
+    ![Untitled](Imágenes/Untitled%2043.png)
     
     ### +120:
     
@@ -534,7 +534,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2044.png)
+    ![Untitled](Imágenes/Untitled%2044.png)
     
     ### +23:
     
@@ -542,7 +542,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L0, E0, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2045.png)
+    ![Untitled](Imágenes/Untitled%2045.png)
     
     ### +52:
     
@@ -550,7 +550,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2046.png)
+    ![Untitled](Imágenes/Untitled%2046.png)
     
     ### +59:
     
@@ -558,7 +558,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2047.png)
+    ![Untitled](Imágenes/Untitled%2047.png)
     
     ### +65:
     
@@ -566,7 +566,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L0, E0, E3, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2048.png)
+    ![Untitled](Imágenes/Untitled%2048.png)
     
     ### +30:
     
@@ -574,7 +574,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2049.png)
+    ![Untitled](Imágenes/Untitled%2049.png)
     
     ### +40:
     
@@ -582,7 +582,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2050.png)
+    ![Untitled](Imágenes/Untitled%2050.png)
     
     ### +45:
     
@@ -590,7 +590,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L0, E0, E4, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2051.png)
+    ![Untitled](Imágenes/Untitled%2051.png)
     
     ### +31:
     
@@ -598,7 +598,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2052.png)
+    ![Untitled](Imágenes/Untitled%2052.png)
     
     ### +34:
     
@@ -606,7 +606,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2053.png)
+    ![Untitled](Imágenes/Untitled%2053.png)
     
     ### +38:
     
@@ -614,7 +614,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L0, E0, E5, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2054.png)
+    ![Untitled](Imágenes/Untitled%2054.png)
     
     ### +60:
     
@@ -622,7 +622,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2055.png)
+    ![Untitled](Imágenes/Untitled%2055.png)
     
     ### +63:
     
@@ -630,7 +630,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2056.png)
+    ![Untitled](Imágenes/Untitled%2056.png)
     
     ### +64:
     
@@ -640,7 +640,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L2, L3, E3, E6, E2, E7, E8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2057.png)
+    ![Untitled](Imágenes/Untitled%2057.png)
     
     ### -23:
     
@@ -648,7 +648,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L8, L2, L0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2058.png)
+    ![Untitled](Imágenes/Untitled%2058.png)
     
     ### -30:
     
@@ -656,7 +656,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L8, L2, L0, L5, E0, E5, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2059.png)
+    ![Untitled](Imágenes/Untitled%2059.png)
     
     ### -31:
     
@@ -664,7 +664,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L8, L2, L0, L5, E0, E2.
     
-    ![Screenshot 2023-05-12 163736.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-12_163736.png)
+    ![Screenshot 2023-05-12 163736.png](Imágenes/Screenshot_2023-05-12_163736.png)
     
     ### -40:
     
@@ -672,7 +672,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L8, L2, L4, E4, E2.
     
-    ![Screenshot 2023-05-12 163905.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-12_163905.png)
+    ![Screenshot 2023-05-12 163905.png](Imágenes/Screenshot_2023-05-12_163905.png)
     
     ### -45:
     
@@ -680,7 +680,7 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L8, L2, L4, L0, E0, E4, E2.
     
-    ![Screenshot 2023-05-12 163941.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-12_163941.png)
+    ![Screenshot 2023-05-12 163941.png](Imágenes/Screenshot_2023-05-12_163941.png)
     
     ### -38:
     
@@ -690,14 +690,14 @@ orden 5. Política de resolución de underflows: izquierda. +80, +50, +70, +120,
     
     Operaciones: L8, L2, L4, L0, E0, L7, E2, E7, E8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2060.png)
+    ![Untitled](Imágenes/Untitled%2060.png)
     
 - **12:** Dado el siguiente árbol B de orden 6, mostrar como quedaría el mismo luego de realizar
 las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de resolución de underflows: izquierda o derecha.
     
     Mínimo de claves por nodo: 6 / 2 - 1 = 2.
     
-    ![Screenshot 2023-05-14 161200.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-14_161200.png)
+    ![Screenshot 2023-05-14 161200.png](Imágenes/Screenshot_2023-05-14_161200.png)
     
     ### +300:
     
@@ -707,7 +707,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L1, E1, E7, E2, E8, E9.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2061.png)
+    ![Untitled](Imágenes/Untitled%2061.png)
     
     ### +577:
     
@@ -715,7 +715,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L9, L8, L5, E5, E10, E8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2062.png)
+    ![Untitled](Imágenes/Untitled%2062.png)
     
     ### -586:
     
@@ -723,7 +723,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L9, L8, L5, E5.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2063.png)
+    ![Untitled](Imágenes/Untitled%2063.png)
     
     ### -570:
     
@@ -733,7 +733,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L9, L8, L5, L10, E10, E8, E9.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2064.png)
+    ![Untitled](Imágenes/Untitled%2064.png)
     
     ### -380:
     
@@ -741,7 +741,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L9, L2, L7, L1, E7, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2065.png)
+    ![Untitled](Imágenes/Untitled%2065.png)
     
     ### -460:
     
@@ -751,7 +751,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L9, L2, L4, L7, E7, E2.
     
-    ![Screenshot 2023-05-17 124344.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-17_124344.png)
+    ![Screenshot 2023-05-17 124344.png](Imágenes/Screenshot_2023-05-17_124344.png)
     
 - **13:** Dada las siguientes operaciones, mostrar cómo se construye el árbol B de orden 4: +65,
 +89, +23, +45, +20, +96, +10, +55, -23, +110, +50, -10, +25, -50, -45, +120, +130, +70, +75, +73, +100, -120, -110. Política de resolución de underflows: derecha.
@@ -764,7 +764,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2066.png)
+    ![Untitled](Imágenes/Untitled%2066.png)
     
     ### +89:
     
@@ -772,7 +772,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2067.png)
+    ![Untitled](Imágenes/Untitled%2067.png)
     
     ### +23:
     
@@ -780,7 +780,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2068.png)
+    ![Untitled](Imágenes/Untitled%2068.png)
     
     ### +45:
     
@@ -788,7 +788,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L0, E0, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2069.png)
+    ![Untitled](Imágenes/Untitled%2069.png)
     
     ### +20:
     
@@ -796,7 +796,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2070.png)
+    ![Untitled](Imágenes/Untitled%2070.png)
     
     ### +96:
     
@@ -804,7 +804,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2071.png)
+    ![Untitled](Imágenes/Untitled%2071.png)
     
     ### +10:
     
@@ -812,7 +812,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L0, E0, E3, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2072.png)
+    ![Untitled](Imágenes/Untitled%2072.png)
     
     ### +55:
     
@@ -820,7 +820,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2073.png)
+    ![Untitled](Imágenes/Untitled%2073.png)
     
     ### -23:
     
@@ -828,7 +828,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L3, E3, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2074.png)
+    ![Untitled](Imágenes/Untitled%2074.png)
     
     ### +110:
     
@@ -836,7 +836,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2075.png)
+    ![Untitled](Imágenes/Untitled%2075.png)
     
     ### +50:
     
@@ -844,7 +844,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2076.png)
+    ![Untitled](Imágenes/Untitled%2076.png)
     
     ### -10:
     
@@ -852,7 +852,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2077.png)
+    ![Untitled](Imágenes/Untitled%2077.png)
     
     ### +25:
     
@@ -860,7 +860,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2078.png)
+    ![Untitled](Imágenes/Untitled%2078.png)
     
     ### -50:
     
@@ -868,7 +868,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2079.png)
+    ![Untitled](Imágenes/Untitled%2079.png)
     
     ### -45:
     
@@ -878,7 +878,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L3, L1, E3, E1, E2.
     
-    ![Screenshot 2023-05-17 135721.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-17_135721.png)
+    ![Screenshot 2023-05-17 135721.png](Imágenes/Screenshot_2023-05-17_135721.png)
     
     ### +120:
     
@@ -886,7 +886,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L1, E1.
     
-    ![Screenshot 2023-05-17 135804.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-17_135804.png)
+    ![Screenshot 2023-05-17 135804.png](Imágenes/Screenshot_2023-05-17_135804.png)
     
     ### +130:
     
@@ -894,7 +894,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2080.png)
+    ![Untitled](Imágenes/Untitled%2080.png)
     
     ### +70:
     
@@ -902,7 +902,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2081.png)
+    ![Untitled](Imágenes/Untitled%2081.png)
     
     ### +75:
     
@@ -910,7 +910,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L3, E3, E4, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2082.png)
+    ![Untitled](Imágenes/Untitled%2082.png)
     
     ### +73:
     
@@ -918,7 +918,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2083.png)
+    ![Untitled](Imágenes/Untitled%2083.png)
     
     ### +100:
     
@@ -928,7 +928,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L2, L1, E1, E5, E2, E6, E7.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2084.png)
+    ![Untitled](Imágenes/Untitled%2084.png)
     
     ### -120:
     
@@ -938,7 +938,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L7, L6, L5, L1, E1, E5, E6.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2085.png)
+    ![Untitled](Imágenes/Untitled%2085.png)
     
     ### -110:
     
@@ -948,7 +948,7 @@ las siguientes operaciones: +300, +577, -586, -570, -380, -460. Política de res
     
     Operaciones: L7, L6, L5, L1, E1, L2, E2, E6, E7.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2086.png)
+    ![Untitled](Imágenes/Untitled%2086.png)
     
 - **14:** Dado el siguiente árbol B + de orden 4 y con política de resolución de underflows a
 derecha, realice las siguientes operaciones indicando lecturas y escrituras en el orden
@@ -957,7 +957,7 @@ operación. +80, -400.
     
     Mínimo de claves por nodo: 4 / 2  - 1= 1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2087.png)
+    ![Untitled](Imágenes/Untitled%2087.png)
     
     ### +80:
     
@@ -967,7 +967,7 @@ operación. +80, -400.
     
     Operaciones: L4, L0, E0, E5, E4, E6, E7.
     
-    ![Screenshot 2023-05-14 213039.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-14_213039.png)
+    ![Screenshot 2023-05-14 213039.png](Imágenes/Screenshot_2023-05-14_213039.png)
     
     ### -400:
     
@@ -978,7 +978,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Mínimo de claves por nodo: 4 / 2 - 1 = 1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2088.png)
+    ![Untitled](Imágenes/Untitled%2088.png)
     
     ### +120:
     
@@ -986,7 +986,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L2, L1, E1, E3, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2089.png)
+    ![Untitled](Imágenes/Untitled%2089.png)
     
     ### +110:
     
@@ -994,7 +994,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L2, L3, E3.
     
-    ![Screenshot 2023-05-14 223131.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-14_223131.png)
+    ![Screenshot 2023-05-14 223131.png](Imágenes/Screenshot_2023-05-14_223131.png)
     
     ### +52:
     
@@ -1002,7 +1002,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2090.png)
+    ![Untitled](Imágenes/Untitled%2090.png)
     
     ### +70:
     
@@ -1010,7 +1010,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2091.png)
+    ![Untitled](Imágenes/Untitled%2091.png)
     
     ### +15:
     
@@ -1018,7 +1018,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L2, L0, E0, E4, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2092.png)
+    ![Untitled](Imágenes/Untitled%2092.png)
     
     ### -45:
     
@@ -1026,7 +1026,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L2, L4, E4.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2093.png)
+    ![Untitled](Imágenes/Untitled%2093.png)
     
     ### -52:
     
@@ -1034,7 +1034,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L2, L4, L1, E4, E1.
     
-    ![Screenshot 2023-05-14 230716.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-14_230716.png)
+    ![Screenshot 2023-05-14 230716.png](Imágenes/Screenshot_2023-05-14_230716.png)
     
     ### +22:
     
@@ -1042,7 +1042,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L2, L0, E0.
     
-    ![Screenshot 2023-05-14 230815.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-14_230815.png)
+    ![Screenshot 2023-05-14 230815.png](Imágenes/Screenshot_2023-05-14_230815.png)
     
     ### +19:
     
@@ -1052,7 +1052,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L2, L0, E0, E5, E2, E6, E7.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2094.png)
+    ![Untitled](Imágenes/Untitled%2094.png)
     
     ### -66:
     
@@ -1060,7 +1060,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L7, L2, L4, L5, E4, E5, E2.
     
-    ![Screenshot 2023-05-14 231421.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-14_231421.png)
+    ![Screenshot 2023-05-14 231421.png](Imágenes/Screenshot_2023-05-14_231421.png)
     
     ### -22:
     
@@ -1068,7 +1068,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L7, L2, L4, L5, E5, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2095.png)
+    ![Untitled](Imágenes/Untitled%2095.png)
     
     ### -19:
     
@@ -1076,7 +1076,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L7, L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2096.png)
+    ![Untitled](Imágenes/Untitled%2096.png)
     
     ### -23:
     
@@ -1086,7 +1086,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L7, L2, L5, L0, E0, L6, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2097.png)
+    ![Untitled](Imágenes/Untitled%2097.png)
     
     ### -89:
     
@@ -1094,7 +1094,7 @@ realizar las siguientes operaciones: +120, +110, +52, +70, +15, -45, -52, +22, +
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2098.png)
+    ![Untitled](Imágenes/Untitled%2098.png)
     
 - **16:** Dada las siguientes operaciones, mostrar la construcción paso a paso de un árbol B+
 de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +57, -96, -67, -95, -60, -120, -57, -56. Política de resolución de underflows: derecha o izquierda.
@@ -1107,7 +1107,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%2099.png)
+    ![Untitled](Imágenes/Untitled%2099.png)
     
     ### +56:
     
@@ -1115,7 +1115,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20100.png)
+    ![Untitled](Imágenes/Untitled%20100.png)
     
     ### +96:
     
@@ -1123,7 +1123,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20101.png)
+    ![Untitled](Imágenes/Untitled%20101.png)
     
     ### +10:
     
@@ -1131,7 +1131,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L0, E0, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20102.png)
+    ![Untitled](Imágenes/Untitled%20102.png)
     
     ### +28:
     
@@ -1139,7 +1139,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20103.png)
+    ![Untitled](Imágenes/Untitled%20103.png)
     
     ### +95:
     
@@ -1147,7 +1147,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20104.png)
+    ![Untitled](Imágenes/Untitled%20104.png)
     
     ### +16:
     
@@ -1155,7 +1155,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L2, L0, E0, E3, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20105.png)
+    ![Untitled](Imágenes/Untitled%20105.png)
     
     ### +46:
     
@@ -1163,7 +1163,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20106.png)
+    ![Untitled](Imágenes/Untitled%20106.png)
     
     ### +23:
     
@@ -1171,7 +1171,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20107.png)
+    ![Untitled](Imágenes/Untitled%20107.png)
     
     ### +36:
     
@@ -1179,7 +1179,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L2, L3, E3, E4, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20108.png)
+    ![Untitled](Imágenes/Untitled%20108.png)
     
     ### +120:
     
@@ -1189,7 +1189,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L2, L1, E1, E5, E2, E6, E7.
     
-    ![Screenshot 2023-05-16 105323.png](FOD%2063b469800e42486fa5bd69706b45e900/Screenshot_2023-05-16_105323.png)
+    ![Screenshot 2023-05-16 105323.png](Imágenes/Screenshot_2023-05-16_105323.png)
     
     ### +130:
     
@@ -1197,7 +1197,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L7, L6, L5, E5.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20109.png)
+    ![Untitled](Imágenes/Untitled%20109.png)
     
     ### +60:
     
@@ -1205,7 +1205,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L7, L2, L4, E4.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20110.png)
+    ![Untitled](Imágenes/Untitled%20110.png)
     
     ### +57:
     
@@ -1213,7 +1213,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L7, L2, L4, E4, E8, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20111.png)
+    ![Untitled](Imágenes/Untitled%20111.png)
     
     ### -96:
     
@@ -1221,7 +1221,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L7, L6, L5, E5.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20112.png)
+    ![Untitled](Imágenes/Untitled%20112.png)
     
     ### -67:
     
@@ -1229,7 +1229,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L7, L6, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20113.png)
+    ![Untitled](Imágenes/Untitled%20113.png)
     
     ### -95:
     
@@ -1237,7 +1237,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L7, L6, L1, L5, E1, E5, E6.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20114.png)
+    ![Untitled](Imágenes/Untitled%20114.png)
     
     ### -60:
     
@@ -1245,7 +1245,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L7, L2, L8, E8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20115.png)
+    ![Untitled](Imágenes/Untitled%20115.png)
     
     ### -120:
     
@@ -1255,7 +1255,7 @@ de orden 4: +67, +56, +96, +10, +28, +95, +16, +46, +23, +36, +120, +130, +60, +
     
     Operaciones: L7, L6, L1, L5, E1, L2, E2, E6, E7.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20116.png)
+    ![Untitled](Imágenes/Untitled%20116.png)
     
 - **17:** Dada las siguientes operaciones, mostrar la construcción paso a paso de un árbol B+
 de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, +130, +44, -63, -73, +15,+16, -74, -52. Política de resolución de underflows: izquierda.
@@ -1268,7 +1268,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20117.png)
+    ![Untitled](Imágenes/Untitled%20117.png)
     
     ### +23:
     
@@ -1276,7 +1276,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20118.png)
+    ![Untitled](Imágenes/Untitled%20118.png)
     
     ### +10:
     
@@ -1284,7 +1284,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20119.png)
+    ![Untitled](Imágenes/Untitled%20119.png)
     
     ### +99:
     
@@ -1292,7 +1292,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20120.png)
+    ![Untitled](Imágenes/Untitled%20120.png)
     
     ### +63:
     
@@ -1300,7 +1300,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20121.png)
+    ![Untitled](Imágenes/Untitled%20121.png)
     
     ### +74:
     
@@ -1308,7 +1308,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L0, E0, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20122.png)
+    ![Untitled](Imágenes/Untitled%20122.png)
     
     ### +19:
     
@@ -1316,7 +1316,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20123.png)
+    ![Untitled](Imágenes/Untitled%20123.png)
     
     ### +85:
     
@@ -1324,7 +1324,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L0, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20124.png)
+    ![Untitled](Imágenes/Untitled%20124.png)
     
     ### +14:
     
@@ -1332,7 +1332,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20125.png)
+    ![Untitled](Imágenes/Untitled%20125.png)
     
     ### +73:
     
@@ -1340,7 +1340,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L1, E1,
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20126.png)
+    ![Untitled](Imágenes/Untitled%20126.png)
     
     ### +5:
     
@@ -1348,7 +1348,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L0, E0, E3, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20127.png)
+    ![Untitled](Imágenes/Untitled%20127.png)
     
     ### +7:
     
@@ -1356,7 +1356,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20128.png)
+    ![Untitled](Imágenes/Untitled%20128.png)
     
     ### +41:
     
@@ -1364,7 +1364,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L3, E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20129.png)
+    ![Untitled](Imágenes/Untitled%20129.png)
     
     ### +100:
     
@@ -1372,7 +1372,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L1, E1, E4, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20130.png)
+    ![Untitled](Imágenes/Untitled%20130.png)
     
     ### +130:
     
@@ -1380,7 +1380,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L4, E4.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20131.png)
+    ![Untitled](Imágenes/Untitled%20131.png)
     
     ### +44:
     
@@ -1388,7 +1388,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L3. E3.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20132.png)
+    ![Untitled](Imágenes/Untitled%20132.png)
     
     ### -63:
     
@@ -1396,7 +1396,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20133.png)
+    ![Untitled](Imágenes/Untitled%20133.png)
     
     ### -73:
     
@@ -1404,7 +1404,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L1, L3, E3, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20134.png)
+    ![Untitled](Imágenes/Untitled%20134.png)
     
     ### +15:
     
@@ -1412,7 +1412,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20135.png)
+    ![Untitled](Imágenes/Untitled%20135.png)
     
     ### +16:
     
@@ -1420,7 +1420,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L0, E0, E5, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20136.png)
+    ![Untitled](Imágenes/Untitled%20136.png)
     
     ### -74:
     
@@ -1428,7 +1428,7 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20137.png)
+    ![Untitled](Imágenes/Untitled%20137.png)
     
     ### -52:
     
@@ -1436,12 +1436,12 @@ de orden 6:+52, +23, +10, +99, +63, +74, +19, +85, +14, +73, +5, +7, +41, +100, 
     
     Operaciones: L2, L1, L3, E3, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20138.png)
+    ![Untitled](Imágenes/Untitled%20138.png)
     
 - **18:** Dado el siguiente árbol B+ de orden 4, mostrar cómo quedaría definido el árbol luego
 de realizar las siguientes operaciones: -56, -23, -1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20139.png)
+    ![Untitled](Imágenes/Untitled%20139.png)
     
     Cantidad mínima de claves por nodo: 3 / 2 - 1 = 1.
     
@@ -1451,7 +1451,7 @@ de realizar las siguientes operaciones: -56, -23, -1.
     
     Operaciones: L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20140.png)
+    ![Untitled](Imágenes/Untitled%20140.png)
     
     ### -23:
     
@@ -1459,7 +1459,7 @@ de realizar las siguientes operaciones: -56, -23, -1.
     
     Operaciones: L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20141.png)
+    ![Untitled](Imágenes/Untitled%20141.png)
     
     ### -1:
     
@@ -1467,13 +1467,13 @@ de realizar las siguientes operaciones: -56, -23, -1.
     
     Operaciones: L2, L0, L1, E0, E1, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20142.png)
+    ![Untitled](Imágenes/Untitled%20142.png)
     
 - **19:** Dado un árbol B+ de orden 4  y con política izquierda o derecha, para cada operación dada dibuje el árbol resultante, explique brevemente las decisiones tomadas, escriba las lecturas y escrituras. Operaciones: +4, +44, -94, -104.
     
     Cantidad mínima de claves por nodo 4 / 2 - 1 = 1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20143.png)
+    ![Untitled](Imágenes/Untitled%20143.png)
     
     ### +4:
     
@@ -1481,7 +1481,7 @@ de realizar las siguientes operaciones: -56, -23, -1.
     
     Operaciones: L7, L2, L0, E0, E8, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20144.png)
+    ![Untitled](Imágenes/Untitled%20144.png)
     
     ### +44:
     
@@ -1489,7 +1489,7 @@ de realizar las siguientes operaciones: -56, -23, -1.
     
     Operaciones: L7, L2, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20145.png)
+    ![Untitled](Imágenes/Untitled%20145.png)
     
     ### -94:
     
@@ -1503,11 +1503,11 @@ de realizar las siguientes operaciones: -56, -23, -1.
     
     Operaciones: L7, L6, L5, L4, E4, E5, E6.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20146.png)
+    ![Untitled](Imágenes/Untitled%20146.png)
     
 - **20:** Dado el árbol B+ que se detalla más abajo, con orden 6, es decir, capacidad de 5 claves como máximo. Muestre los estados sucesivos al realizar la siguiente secuencia de operaciones: +159, -5 y -190, además indicar nodos leídos y escritos en el orden de ocurrencia. Política de resolución underflow derecha.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20147.png)
+    ![Untitled](Imágenes/Untitled%20147.png)
     
     ### +159:
     
@@ -1519,7 +1519,7 @@ de realizar las siguientes operaciones: -56, -23, -1.
     
     Operaciones: L2, L5, E5, E7, E2, E8, E9.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20148.png)
+    ![Untitled](Imágenes/Untitled%20148.png)
     
     ### -5:
     
@@ -1527,7 +1527,7 @@ de realizar las siguientes operaciones: -56, -23, -1.
     
     Operaciones: L9, L2, L0, L1, E0, E2.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20149.png)
+    ![Untitled](Imágenes/Untitled%20149.png)
     
     ### -190:
     
@@ -1535,14 +1535,14 @@ de realizar las siguientes operaciones: -56, -23, -1.
     
     Operaciones: L9, L8, L6, L7, E7, E6, E8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20150.png)
+    ![Untitled](Imágenes/Untitled%20150.png)
     
 - **21:** Dado un árbol B de orden 5 y con política izquierda o derecha, para cada operación
 dada dibuje el árbol resultante, explique detalladamente las decisiones tomadas y escriba las lecturas y escrituras. Operaciones: +165, +260, +800, -110.
     
     Cantidad mínima de claves por nodo 5 / 2 - 1 = 1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20151.png)
+    ![Untitled](Imágenes/Untitled%20151.png)
     
     ### +165:
     
@@ -1550,7 +1550,7 @@ dada dibuje el árbol resultante, explique detalladamente las decisiones tomadas
     
     Operaciones: L8, L7, L4, E4, E5, E7.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20152.png)
+    ![Untitled](Imágenes/Untitled%20152.png)
     
     ### +260:
     
@@ -1558,7 +1558,7 @@ dada dibuje el árbol resultante, explique detalladamente las decisiones tomadas
     
     Operaciones: L8, L7, L6, E6, E9, E7. 
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20153.png)
+    ![Untitled](Imágenes/Untitled%20153.png)
     
     ### +800:
     
@@ -1568,7 +1568,7 @@ dada dibuje el árbol resultante, explique detalladamente las decisiones tomadas
     
     Operaciones: L8, L7, L1, E1, E10, E7, E11, E8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20154.png)
+    ![Untitled](Imágenes/Untitled%20154.png)
     
     ### -110:
     
@@ -1576,14 +1576,14 @@ dada dibuje el árbol resultante, explique detalladamente las decisiones tomadas
     
     Operaciones: L8, L2, L0, E0.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20155.png)
+    ![Untitled](Imágenes/Untitled%20155.png)
     
 - **22:** Dado un árbol B+ de orden 5 y con política izquierda o derecha, para cada operación
 dada dibuje el árbol resultante, explique detalladamente las decisiones tomadas y escriba las lecturas y escrituras. Operaciones: +250, +300, -40.
     
     Cantidad mínima de claves por nodo 5 / 2 - 1 = 1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20156.png)
+    ![Untitled](Imágenes/Untitled%20156.png)
     
     ### +250:
     
@@ -1593,7 +1593,7 @@ dada dibuje el árbol resultante, explique detalladamente las decisiones tomadas
     
     Operaciones: L8, L7, L9, E9, E10, E7, E11, E8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20157.png)
+    ![Untitled](Imágenes/Untitled%20157.png)
     
     ### +300:
     
@@ -1601,7 +1601,7 @@ dada dibuje el árbol resultante, explique detalladamente las decisiones tomadas
     
     Operaciones: L8, L11, L1, E1.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20158.png)
+    ![Untitled](Imágenes/Untitled%20158.png)
     
     ### -40:
     
@@ -1611,7 +1611,7 @@ dada dibuje el árbol resultante, explique detalladamente las decisiones tomadas
     
     Operaciones: L8, L2, L0, L5, E0, E2, E7, E8.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20159.png)
+    ![Untitled](Imágenes/Untitled%20159.png)
     
 
 ---
@@ -3519,13 +3519,13 @@ para cada operación. Justifique brevemente ante colisión y desborde los pasos 
     
     ### Darín:
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20160.png)
+    ![Untitled](Imágenes/Untitled%20160.png)
     
     ### Alterio:
     
     Hay colisión sin overflow. Se agrega a la dirección.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20161.png)
+    ![Untitled](Imágenes/Untitled%20161.png)
     
     ### Sbaraglia:
     
@@ -3533,7 +3533,7 @@ para cada operación. Justifique brevemente ante colisión y desborde los pasos 
     
     La tabla no dispone de entradas suficientes para direccionar la nueva dirección. Se duplica la cantidad de celdas de la tabla y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20162.png)
+    ![Untitled](Imágenes/Untitled%20162.png)
     
     ### De la Serna:
     
@@ -3541,7 +3541,7 @@ para cada operación. Justifique brevemente ante colisión y desborde los pasos 
     
     La tabla no dispone de entradas suficientes para direccionar la nueva dirección. Se duplica la cantidad de celdas de la tabla y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20163.png)
+    ![Untitled](Imágenes/Untitled%20163.png)
     
     ### Altavista:
     
@@ -3549,13 +3549,13 @@ para cada operación. Justifique brevemente ante colisión y desborde los pasos 
     
     La tabla no dispone de entradas suficientes para direccionar la nueva dirección. Se duplica la cantidad de celdas de la tabla y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20164.png)
+    ![Untitled](Imágenes/Untitled%20164.png)
     
     ### Grandinetti:
     
     Hay colisión sin overflow. Se agrega a la dirección 010.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20165.png)
+    ![Untitled](Imágenes/Untitled%20165.png)
     
 - **17:** Realice el proceso de dispersión mediante el método de hashing extensible, sabiendo
 que cada registro tiene capacidad para dos claves. El número natural indica el orden de
@@ -3571,13 +3571,13 @@ Justifique brevemente ante colisión y desborde los pasos que realiza.
     
     ### Buenos Aires:
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20166.png)
+    ![Untitled](Imágenes/Untitled%20166.png)
     
     ### San Juan:
     
     Hay colisión. Se agrega a la dirección.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20167.png)
+    ![Untitled](Imágenes/Untitled%20167.png)
     
     ### Entre Ríos:
     
@@ -3585,7 +3585,7 @@ Justifique brevemente ante colisión y desborde los pasos que realiza.
     
     La tabla en memoria no tiene las entradas suficientes para las direcciones en disco. Se duplica la cantidad de entradas de la tabla y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20168.png)
+    ![Untitled](Imágenes/Untitled%20168.png)
     
     ### Corrientes:
     
@@ -3593,25 +3593,25 @@ Justifique brevemente ante colisión y desborde los pasos que realiza.
     
     La tabla en memoria no tiene las entradas suficientes para las direcciones en disco. Se duplica la cantidad de entradas de la tabla y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20169.png)
+    ![Untitled](Imágenes/Untitled%20169.png)
     
     ### San Luis:
     
     Hay colisión sin overflow. Se agrega a la dirección 01.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20170.png)
+    ![Untitled](Imágenes/Untitled%20170.png)
     
     ### Tucumán:
     
     Hay colisión con overflow. Se incrementa en uno el valor de la dirección saturada. Se genera una nueva dirección con el mismo valor de la dirección saturada. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20171.png)
+    ![Untitled](Imágenes/Untitled%20171.png)
     
     ### Río Negro:
     
     Hay colisión sin overflow. Se agrega a la dirección 11.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20172.png)
+    ![Untitled](Imágenes/Untitled%20172.png)
     
     ### Jujuy:
     
@@ -3619,7 +3619,7 @@ Justifique brevemente ante colisión y desborde los pasos que realiza.
     
     La tabla en memoria no tiene las entradas suficientes para las direcciones en disco. Se duplica la cantidad de entradas de la tabla  y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20173.png)
+    ![Untitled](Imágenes/Untitled%20173.png)
     
 - **18:** Para las siguientes claves, realice el proceso de dispersión mediante el método de
 hashing extensible, sabiendo que cada nodo tiene capacidad para dos registros. El número
@@ -3634,13 +3634,13 @@ para cada operación. Justifique brevemente ante colisión y desborde los pasos 
     
     ### Borges:
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20174.png)
+    ![Untitled](Imágenes/Untitled%20174.png)
     
     ### Sabato:
     
     Hay colisión sin overflow. Se agrega a la dirección.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20175.png)
+    ![Untitled](Imágenes/Untitled%20175.png)
     
     ### Cortázar:
     
@@ -3648,7 +3648,7 @@ para cada operación. Justifique brevemente ante colisión y desborde los pasos 
     
     La tabla en memoria no tiene las entradas suficientes para las direcciones en disco. Se duplica la cantidad de entradas de la tabla y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20176.png)
+    ![Untitled](Imágenes/Untitled%20176.png)
     
     ### Lugones:
     
@@ -3656,13 +3656,13 @@ para cada operación. Justifique brevemente ante colisión y desborde los pasos 
     
     La tabla en memoria no tiene las entradas suficientes para las direcciones en disco. Se duplica la cantidad de entradas de la tabla y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20177.png)
+    ![Untitled](Imágenes/Untitled%20177.png)
     
     ### Casares:
     
     Hay colisión sin overflow. Se agrega a la dirección 10.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20178.png)
+    ![Untitled](Imágenes/Untitled%20178.png)
     
     ### Walsh:
     
@@ -3670,7 +3670,7 @@ para cada operación. Justifique brevemente ante colisión y desborde los pasos 
     
     La tabla en memoria no tiene las entradas suficientes para las direcciones en disco. Se duplica la cantidad de entradas y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20179.png)
+    ![Untitled](Imágenes/Untitled%20179.png)
     
 - **19:** Para las siguientes claves, realice el proceso de dispersión mediante el método de
 hashing extensible, sabiendo que cada nodo tiene capacidad para dos registros. El
@@ -3686,13 +3686,13 @@ que realiza.
     
     ### Guillermo .B:
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20180.png)
+    ![Untitled](Imágenes/Untitled%20180.png)
     
     ### Gustavo .B:
     
     Hay colisión sin overflow. Se agrega en la dirección.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20181.png)
+    ![Untitled](Imágenes/Untitled%20181.png)
     
     ### Enria:
     
@@ -3700,7 +3700,7 @@ que realiza.
     
     La tabla en memoria no tiene suficientes entradas para las direcciones en disco. Se duplica la cantidad de entradas y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20182.png)
+    ![Untitled](Imágenes/Untitled%20182.png)
     
     ### Gomez:
     
@@ -3708,19 +3708,19 @@ que realiza.
     
     La tabla en memoria no tiene suficientes entradas para las direcciones en disco. Se duplica la cantidad de entradas y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20183.png)
+    ![Untitled](Imágenes/Untitled%20183.png)
     
     ### Sosa:
     
     Hay colisión sin overflow. Se agrega a la dirección 00.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20184.png)
+    ![Untitled](Imágenes/Untitled%20184.png)
     
     ### Guli:
     
     Hay colisión con overflow. Se incrementa en uno el valorasociado a la dirección saturada, y se genera una nueva dirección con el mismo valor de la dirección saturada. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20185.png)
+    ![Untitled](Imágenes/Untitled%20185.png)
     
 - **20:** Para las siguientes claves, realice el proceso de dispersión mediante el método de
 hashing extensible, sabiendo que cada nodo tiene capacidad para dos registros. El
@@ -3736,13 +3736,13 @@ que realiza.
     
     ### Verón:
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20186.png)
+    ![Untitled](Imágenes/Untitled%20186.png)
     
     ### Braña:
     
     Hay colisión sin overflow. Se agrega en la dirección.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20187.png)
+    ![Untitled](Imágenes/Untitled%20187.png)
     
     ### Calderón:
     
@@ -3750,7 +3750,7 @@ que realiza.
     
     La tabla en memoria no tiene suficientes entradas para las direcciones en disco. Se duplica la cantidad de entradas y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20188.png)
+    ![Untitled](Imágenes/Untitled%20188.png)
     
     ### Sosa:
     
@@ -3758,16 +3758,16 @@ que realiza.
     
     La tabla en memoria no tiene suficientes entradas para las direcciones en disco. Se duplica la cantidad de entradas y el valor asociado a la tabla se incrementa en uno. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20189.png)
+    ![Untitled](Imágenes/Untitled%20189.png)
     
     ### Pavone:
     
     Hay colisión sin overflow. Se agrega en la dirección 01.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20190.png)
+    ![Untitled](Imágenes/Untitled%20190.png)
     
     ### Andújar:
     
     Hay colisión con overflow. Se incrementa en uno el valor asociado a la dirección saturada, y se genera una nueva dirección con el mismo valor de la dirección saturada. Se redispersan las claves involucradas.
     
-    ![Untitled](FOD%2063b469800e42486fa5bd69706b45e900/Untitled%20191.png)
+    ![Untitled](Imágenes/Untitled%20191.png)
