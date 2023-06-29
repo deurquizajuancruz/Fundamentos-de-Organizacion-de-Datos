@@ -6,7 +6,7 @@ Preguntas y respuestas que no son sólo códigos.
 
 ---
 
-[Resumen Parcial Práctico](./Resumen%20Parcial%20Pr%C3%A1ctico/README.md)
+[Resumen Parcial Práctico](./Resumen%20Parcial%20Pr%C3%A1ctico/)
 
 ## Práctica 4
 
